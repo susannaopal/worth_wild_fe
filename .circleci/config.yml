@@ -17,8 +17,8 @@ jobs:
 workflows:
   test_and_heroku_deploy:
     jobs:
-      - cypress/install:
-          build: ‘npm run build’ # run a custom app build step
+#       - cypress/install:
+#           build: ‘npm run build’ # run a custom app build step
           # start: npm start
       - cypress/run:
           requires:
