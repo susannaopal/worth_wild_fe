@@ -14,18 +14,14 @@
 #           parallelism: 4 # use 4 CircleCI machines to finish quickly
 #           group: ‘all tests’ # name this group “all tests” on the dashboard
 #           start: ‘npm run test:e2e’ # start server before running tests
-     
+
+   
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.29.0
-executors:
-  with-chrome:
-    docker:
-      - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
+  cypress: cypress-io/cypress@1
 workflows:
-  build: 'npm run build'
+  build: npm run build
     jobs:
       - cypress/run:
-          executor: with-chrome
-          browser: chrome
-          start: 'npm run test:e2e'
+          start: npm run test:e2e
+          wait-on: "http://localhost:3000"
