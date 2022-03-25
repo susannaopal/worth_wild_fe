@@ -1,27 +1,16 @@
-# version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1.29.0
-  
-# workflows:
-#   start-server-and-test:
-#     jobs:
-#       - cypress/install:
-#           build: ‘npm run build’ # run a custom app build step
-#       - cypress/run:
-#           requires:
-#             - cypress/install
-#           parallel: true # split all specs across machines
-#           parallelism: 4 # use 4 CircleCI machines to finish quickly
-#           group: ‘all tests’ # name this group “all tests” on the dashboard
-#           start: ‘npm run test:e2e’ # start server before running tests
-
-   
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.29.0
+  
 workflows:
-  build: npm run build
+  start-server-and-test:
     jobs:
+      - cypress/install:
+          build: ‘npm run build’ # run a custom app build step
       - cypress/run:
-          start: npm run test:e2e
-          wait-on: "http://localhost:3000"
+          requires:
+            - cypress/install
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: ‘all tests’ # name this group “all tests” on the dashboard
+          start: ‘npm run test:e2e’ # start server before running tests
