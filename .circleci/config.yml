@@ -1,53 +1,34 @@
- version: 2.1
-
- orbs:
-   heroku: circleci/heroku@x.y # Use the Heroku orb in your config
-
- workflows:
-   heroku_deploy:
-     jobs:
-       - build
-       - heroku/deploy-via-git:
-           requires:
-             - build # only run deploy-via-git job if the build job has completed
-           filters:
-             branches:
-               only: main # only run deploy-via-git job on main branch
-
-
-
-
-# version: 2.1
-# orbs:
-#   cypress: cypress-io/cypress@1.29.0
-#   heroku: circleci/heroku@1.2.6
-# jobs:
-#   deploy:
-#     executor: heroku/default
-#     steps:
-#       - checkout
-#       - heroku/install
-#       - run:
-#           command: >
-#             echo “The command above installs Heroku, the command below deploys.
-#             What you do inbetween is up to you!”
-#       - heroku/deploy-via-git
-# workflows:
-#   test_and_heroku_deploy:
-#     jobs:
-#       - cypress/install:
-#           build: ‘npm run build’ # run a custom app build step
-#           start: npm start
-#       - cypress/run:
-#           requires:
-#             - cypress/install
-#           parallel: true # split all specs across machines
-#           parallelism: 4 # use 4 CircleCI machines to finish quickly
-#           group: ‘all tests’ # name this group “all tests” on the dashboard
-#           start: ‘npm start’ # start server before running tests
-#       - deploy:
-#           requires:
-#             - cypress/run
-#           filters:
-#             branches:
-#               only: main
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.29.0
+  heroku: circleci/heroku@1.2.6
+jobs:
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - run:
+          command: >
+            echo “The command above installs Heroku, the command below deploys.
+            What you do inbetween is up to you!”
+      - heroku/deploy-via-git
+workflows:
+  test_and_heroku_deploy:
+    jobs:
+      - cypress/install:
+          build: ‘npm run build’ # run a custom app build step
+          start: npm start
+      - cypress/run:
+          requires:
+            - cypress/install
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: ‘all tests’ # name this group “all tests” on the dashboard
+          start: ‘npm start’ # start server before running tests
+      - deploy:
+          requires:
+            - cypress/run
+          filters:
+            branches:
+              only: main
