@@ -1,5 +1,6 @@
 <script setup>
   import logo from "../assets/worth_wild.png";
+  import { RouterLink } from "vue-router";
 </script>
 
 <template>
