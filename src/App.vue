@@ -39,6 +39,10 @@ export default {
 
 <style>
 /* @import "@/assets/base.css"; */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap');
 
-
+html {
+  background-color: #93A443;
+  font-family: 'Arvo', serif;
+}
 </style>
