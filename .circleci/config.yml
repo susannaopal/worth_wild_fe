@@ -23,4 +23,5 @@ workflows:
     jobs:
       - cypress/run:
           start: npm run test:e2e
+          wait-on: npm run dev
           
