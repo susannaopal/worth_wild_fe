@@ -21,7 +21,13 @@ orbs:
 workflows:
   build:
     jobs:
+      - cypress/install:
+          pre-steps:
+            - run: npm run dev
       - cypress/run:
-          start: npm run dev
-          wait-on: 'http://localhost:3000/'
+          requires:
+            - cypress/install
+      - cypress/run: 
+          start: npm run test:e2e
+          wait-on: 'http://localhost:3000/' 
           
