@@ -10,30 +10,11 @@ import HelloWorld from "@/components/HelloWorld.vue";
       <nav>
         <RouterLink to="/">Welcome</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/dashboard"><button>User Dashboard</button></RouterLink> -->
+        <RouterLink to="/dashboard"><button>User Dashboard</button></RouterLink> 
       </nav>
     </div>
 
   <RouterView />
-  <!-- <template>
-  <div id="app">
-    <SideBar /> 
-    <router-view v-if="loaded" /> 
-  </div>
-</template>
-
-<script>
-import SideBar from "./pages/SideBar";
-
-export default {
-  components: { SideBar },
-  computed: {
-    loaded() {
-      return this.$store.state.loadState == "loaded";
-    }
-  }
-};
-</script> -->
 
 </template>
 
