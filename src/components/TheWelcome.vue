@@ -1,12 +1,10 @@
 <script setup>
-  import logo from "../assets/worth_wild.png";
   import { RouterLink } from "vue-router";
 </script>
 
 <template>
   <body>
-    <h1>Worth Wild</h1>
-    <!-- <img src="logo"/> -->
+    <img required src="../assets/worth_wild.png" class="logo"/>
     <div class="landing-page-links">
       <RouterLink to="/home" class="landing-btns">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
@@ -17,12 +15,18 @@
 </template>
 
 <style>
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    border: 3px solid red;
+    height: 200px;
+    padding: -100px;
+  }
 
   .mission-statement {
     color: #432A0B;
