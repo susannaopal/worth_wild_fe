@@ -15,19 +15,26 @@
 #           group: ‘all tests’ # name this group “all tests” on the dashboard
 #           start: ‘npm run test:e2e’ # start server before running tests
 
+# version: 2.1
+# orbs:
+#   cypress: cypress-io/cypress@1
+# workflows:
+#   build:
+#     jobs:
+#       - cypress/install:
+#           pre-steps:
+#             start: npm run dev
+#       - cypress/run:
+#           requires:
+#             - cypress/install
+#       - cypress/run: 
+#           start: npm run test:e2e
+#           wait-on: 'http://localhost:3000/' 
+          
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
-      - cypress/install:
-          pre-steps:
-            - run: npm run dev
-      - cypress/run:
-          requires:
-            - cypress/install
-      - cypress/run: 
-          start: npm run test:e2e
-          wait-on: 'http://localhost:3000/' 
-          
+      - cypress/run
