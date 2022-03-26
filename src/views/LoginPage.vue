@@ -33,7 +33,6 @@
   </form>
 </template>
 
-
 <style>
   form {
     margin-top: 50px;
