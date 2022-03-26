@@ -38,6 +38,6 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          start: npm run serve
+          start: npm start
           wait-on: 'http://localhost:3000'
 
