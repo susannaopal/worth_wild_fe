@@ -4,7 +4,9 @@ import { RouterLink } from "vue-router";
 
 <template>
   <body>
-    <img required src="../assets/worth_wild.png" class="logo" />
+    <!-- <div class="logo-div"> -->
+      <img required src="../assets/worth_wild.png" class="logo" />
+    <!-- </div> -->
     <div class="landing-page-links">
       <RouterLink to="/guest" class="landing-btns">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
@@ -31,10 +33,18 @@ body {
   align-items: center;
 }
 
+/* .logo-div {
+  height: 500px;
+  width: 200vw;
+  border: 2px solid #334111;
+} */
+
 .logo {
-  border: 3px solid red;
-  height: 200px;
-  padding: -100px;
+  height: 400px;
+  background-color: #bccf8f;
+  border-radius: 50px;
+  padding: 25px;
+  margin: 15px 0px;
 }
 
 .mission-statement {

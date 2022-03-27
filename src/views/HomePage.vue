@@ -38,7 +38,7 @@ import NavBar from "@/components/NavBar.vue";
 .feature-info {
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: 98vw;
   height: 40vh;
 }
 
@@ -77,6 +77,11 @@ import NavBar from "@/components/NavBar.vue";
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #E9E7DD;
+  border: 3px solid #C8C097;
+  border-radius: 35px;
+  margin-top: 75px;
+  width: 95vw;
 }
 
 .animal-card {

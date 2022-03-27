@@ -16,8 +16,8 @@ import { RouterLink } from "vue-router";
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
     <div class="nav-buttons">
-      <button class="nav-btn">User Profile</button>
-      <button class="nav-btn">Main</button>
+      <RouterLink to="/user-profile" class="nav-btn">User Profile</RouterLink>
+      <RouterLink to="/guest" class="nav-btn">Main</RouterLink>
       <button class="nav-btn">Logout</button>
     </div>
   </header>
@@ -70,10 +70,11 @@ header {
 }
 
 .nav-btn {
+  display: flex;
+  justify-content: center;
   color: #432a0b;
   background-color: #e9e7dd;
   width: 80%;
-  /* height: 35px; */
   border-radius: 25px;
   border: 3px solid #bcb8a1;
   font-size: large;
