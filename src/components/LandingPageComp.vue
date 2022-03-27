@@ -6,7 +6,7 @@ import { RouterLink } from "vue-router";
   <body>
     <img required src="../assets/worth_wild.png" class="logo" />
     <div class="landing-page-links">
-      <RouterLink to="/home" class="landing-btns">Guest</RouterLink>
+      <RouterLink to="/guest" class="landing-btns">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">
