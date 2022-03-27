@@ -6,12 +6,7 @@ import { RouterLink } from "vue-router";
   <header>
     <div class="logo-tagline-div">
       <div class="logo-div">
-        <img
-          require
-          src="../assets/Worth_Wild.png"
-          class="nav-logo"
-          alt="worth wild logo"
-        />
+        <img require src="../assets/Worth_Wild.png" class="nav-logo" alt="worth wild logo" />
       </div>
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
