@@ -18,6 +18,19 @@ import NavBar from "@/components/NavBar.vue";
         <img src="" alt="organization image" />
       </div>
     </section>
+    <section class="search-bar-div">
+      <input type="text" placeholder="Search by name" name="animal" class="search-bar" />
+    </section>
+    <section class="animal-cards-section">
+      <div class="animal-card">Animal here</div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+      <div class="animal-card"></div>
+    </section>
   </body>
 </template>
 
@@ -27,7 +40,6 @@ import NavBar from "@/components/NavBar.vue";
   justify-content: space-around;
   width: 100vw;
   height: 40vh;
-  border: 2px solid blue;
 }
 
 .feature-info-div {
@@ -41,5 +53,46 @@ import NavBar from "@/components/NavBar.vue";
   border: 3px solid #C8C097;
   margin-top: 15px;
   border-radius: 50px;
+}
+
+.search-bar-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 100vw;
+  background-color: #3b4b13;
+}
+
+.search-bar {
+  height: 55%;
+  background-color: #e9e7dd;
+  margin: 0;
+  font-size: larger;
+  padding-left: 30px;
+}
+
+.animal-cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.animal-card {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 400px;
+  background-color:#556D1D;
+  border-radius: 25px;
+  color: #556D1D;
+  /* border: 3px solid #3b4b13; */
+  border: 3px solid #526625;
+  margin: 35px;
+}
+
+.animal-card:hover {
+  color: #e9e7dd;
 }
 </style>

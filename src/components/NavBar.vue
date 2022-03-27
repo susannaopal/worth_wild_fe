@@ -48,8 +48,6 @@ header {
   border-radius: 70px;
   padding: 15px;
   margin: 10px 35px 10px 15px;
-  /* margin-left: 15px;
-  margin-right: 35px; */
 }
 
 .nav-logo {
