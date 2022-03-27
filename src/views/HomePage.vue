@@ -51,8 +51,8 @@ import NavBar from "@/components/NavBar.vue";
   width: 48%;
   background-color: #e9e7dd;
   border: 3px solid #C8C097;
-  margin-top: 15px;
   border-radius: 50px;
+  margin: 15px 30px;
 }
 
 .search-bar-div {
