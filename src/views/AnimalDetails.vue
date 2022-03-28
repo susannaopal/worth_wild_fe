@@ -45,7 +45,7 @@
   <body>
     <NavBar />
     <section class="animal-details">
-      <div :style="{'background-image': `url(${this.attributes.imageUrl})`}" class="animal-picture">
+      <div :style="{'background-image': `url(${this.attributes.imageUrl})`}" class="animal-picture-div">
         <h2 class="name">{{ this.attributes.common_name.toUpperCase() }}</h2>
         <h3 class="status">{{ this.attributes.vulnerability.gRankReasons }}</h3>
       </div>
@@ -82,20 +82,11 @@
     z-index: -5;
   }
 
-  .animal-picture {
-    height: 30%;
+  .animal-picture-div {
+    height: 300px;
+    width: fit-content;
   }
   
-  .animal-pic {
-    width: 500px;
-    /* z-index: -2; */
-    position: absolute;
-  }
-
-  .animal-facts {
-    padding-top: 600px;
-  }
-
   .name {
     z-index: 1;
   }
