@@ -6,7 +6,7 @@
     data() {
       return {
         id : 1,
-        type: animal,
+        type: "animal",
         attributes: {
           common_name: 'american black bear',
           scientific_name: 'Ursus americanus',
@@ -29,21 +29,27 @@
           'threatImpactComments': 'Locally threatened by habitat loss and interference by humans.',
           'shortTermTrend': 'Populations have increased recently in the northeastern U.S.',
           popSize: '10,000 to >1,000,000 individuals',
-          imageUrl: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nationalgeographic.com%2Fanimals%2Fmammals%2Ffacts%2Famerican-black-bear&psig=AOvVaw0pbK3JRLKHSVB61jy-wXb8&ust=1648575396592000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKCn84is6fYCFQAAAAAdAAAAABAD'
+          imageUrl: 'https://i.natgeofe.com/n/079d885f-8e97-4e79-a6f1-d7578892399b/4403088.jpg'
         }
       }
+    },
+
+    methods: {
+      
     }
   }
+
 </script>
+
 
 <template>
   <body>
     <NavBar />
     <section class="animal-details">
       <div class="animal-picture">
-        <h2>El Tigre</h2>
-        <h3>Endangered</h3>
-        <img src="" alt="animal pic" />
+        <h2>{{ this.attributes.common_name.toUpperCase() }}</h2>
+        <h3>{{ this.attributes.vulnerability.gRankReasons }}</h3>
+        <img require src=this.attributes.imageUrl alt="animal pic" />
       </div>
       <section class="animal-facts">
         <div class="scientific-class-div">
