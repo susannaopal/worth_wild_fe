@@ -1,10 +1,10 @@
 <script setup>
-import TheWelcome from "@/components/TheWelcome.vue";
+import LandingPageComp from "@/components/LandingPageComp.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <LandingPageComp />
   </main>
 </template>
 

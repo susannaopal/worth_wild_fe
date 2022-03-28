@@ -1,29 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
 </script>
 
 <template>
-    <div class="wrapper">
-      <HelloWorld msg="Welcome to Animal World" />
-
-      <nav>
-        <RouterLink to="/">Welcome</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/dashboard"><button>User Dashboard</button></RouterLink> 
-      </nav>
-    </div>
+  <div class="wrapper">
+    <nav>
+      <RouterLink to="/">Welcome</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/dashboard"><button>User Dashboard</button></RouterLink>
+    </nav>
+  </div>
 
   <RouterView />
-
 </template>
 
 <style>
 /* @import "@/assets/base.css"; */
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap");
 
 html {
-  background-color: #93A443;
-  font-family: 'Arvo', serif;
+  background-color: #93a443;
+  font-family: "Arvo", serif;
 }
 </style>
