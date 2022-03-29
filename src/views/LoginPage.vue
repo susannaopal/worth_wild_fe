@@ -14,16 +14,17 @@ export default {
         `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username}`);
       const data = await res.json();
       this.user = data;
-      console.log('testing')
+      this.$router.push("/guest");
+
     },
     checkForm() {
       if (!this.username || !this.password) {
-        this.loginError = true
+        this.loginError = true;
       } else {
-        this.loginError = false
+        this.loginError = false;
         this.getUser();
       }
-    }
+    },
   },
 };
 </script>
