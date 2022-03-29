@@ -48,6 +48,10 @@ input {
   width: 20em;
   margin-top: 5px;
   border: 3px solid #c8c097;
+  color: #432a0b;
+  font-weight: bold;
+  font-size: 15px;
+  padding-left: 15px;
 }
 
 .input-div {
