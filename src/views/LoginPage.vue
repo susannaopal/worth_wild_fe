@@ -4,7 +4,26 @@ export default {
     return {
       username: "",
       password: "",
+      user: {},
+      loginError: false
     };
+  },
+  methods: {
+    async getUser() {
+      const res = await fetch(
+        `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username}`);
+      const data = await res.json();
+      this.user = data;
+      console.log('testing')
+    },
+    checkForm() {
+      if (!this.username || !this.password) {
+        this.loginError = true
+      } else {
+        this.loginError = false
+        this.getUser();
+      }
+    }
   },
 };
 </script>
@@ -17,9 +36,10 @@ export default {
     </div>
     <div class="input-div">
       <label>Password:</label>
-      <input type="text" name="password" required v-model="password" />
+      <input type="password" name="password" required v-model="password" />
     </div>
-    <button class="login-btn" type="submit">Login</button>
+    <p v-if="loginError" class="login-error-msg" >Please fill out both fields in order to login!</p>
+    <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
   </form>
 </template>
 
@@ -74,6 +94,10 @@ input {
   transition: 0.2s;
   transform: scale(1.2);
   background-color: #556d1d;
+  color: #e9e7dd;
+}
+
+.login-error-msg {
   color: #e9e7dd;
 }
 </style>
