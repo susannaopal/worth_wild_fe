@@ -22,6 +22,7 @@ import NavBar from "@/components/NavBar.vue";
       <input type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
+      <RouterLink to="/details" class="animal-card">Animal Here</RouterLink>
       <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
