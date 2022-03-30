@@ -26,7 +26,8 @@ export default {
         `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
       const data = await res.json();
       this.user = data.data;
-      // router.push('/guest')
+      router.push({ name: 'HomePage', params: { user: this.user }})
+      // console.log(this.user, 'user')
     },
     checkForm() {
       if (!this.username || !this.password) {
@@ -51,9 +52,9 @@ export default {
       <input type="password" name="password" required v-model="password" />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
-    <RouterLink @submit="this.checkForm" :user="user" to="/guest" class="login-btn">Submit
-      <!-- <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button> -->
-    </RouterLink>
+    <!-- <RouterLink @click="this.checkForm" :to="{ name: 'HomePage', props: { user: user } }" class="login-btn">Submit -->
+      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+    <!-- </RouterLink> -->
   </form>
   <RouterView />
 </template>

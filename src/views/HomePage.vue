@@ -6,9 +6,8 @@ import NavBar from "@/components/NavBar.vue";
 
 <script>
 export default {
-  props: {
-    user: ["user"]
-   },
+  name: "HomePage",
+  props: ["user"],
   }
 
 </script>
