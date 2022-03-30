@@ -5,11 +5,11 @@ import NavBar from "@/components/NavBar.vue";
 </script>
 
 <script>
-// export default {
-//   props: {
-//     ...RouterLink.props,
-//    },
-//   }
+export default {
+  props: {
+    user: ["user"]
+   },
+  }
 
 </script>
 

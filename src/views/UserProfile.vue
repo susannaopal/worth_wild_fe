@@ -1,13 +1,19 @@
 <script>
   import { RouterLink } from "vue-router";
   import NavBar from '../components/NavBar.vue';
+
+  export default {
+  props: {
+    user: ["user"]
+   },
+  }
 </script>
 
 <template>
   <body>
     <NavBar />
     <section class="user-info-section">
-      <h3>Welcome, Barack Obama</h3>
+      <h3 v-if="user">Welcome, {{ user.attributes.first_name }}</h3>
     </section>
     <h2>Favorites:</h2>
     <section class="user-favorite-animals">
