@@ -1,6 +1,22 @@
 <script setup>
 import { RouterLink } from "vue-router";
 </script>
+<script>
+  export default {
+    data() {
+      return {
+        animals: []
+      }
+    },
+    methods: {
+      async getAnimals() {
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals ');
+        const data = await res.json();
+        this.animals = data.data;  
+      }
+    },
+  }
+</script>
 
 <template>
   <body>
@@ -8,7 +24,7 @@ import { RouterLink } from "vue-router";
       <img required src="../assets/worth_wild.png" class="logo" />
     <!-- </div> -->
     <div class="landing-page-links">
-      <RouterLink to="/guest" class="landing-btns">Guest</RouterLink>
+      <RouterLink to="/guest" class="landing-btns" @click="getAnimals">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">

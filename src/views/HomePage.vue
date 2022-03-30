@@ -8,8 +8,12 @@ import NavBar from "@/components/NavBar.vue";
 export default {
   name: "HomePage",
   props: ["user"],
+  methods: {
+    // checkUser() {
+    //   console.log()
+    // }
   }
-
+}
 </script>
 
 <template>
@@ -27,10 +31,10 @@ export default {
       </div>
     </section>
     <section class="search-bar-div">
-      <input type="text" placeholder="Search by name" name="animal" class="search-bar" />
+      <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
-      <RouterLink to="/details" class="animal-card">Animal Here</RouterLink>
+      <RouterLink to="/details" class="animal-card">{{ user }}</RouterLink>
       <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>

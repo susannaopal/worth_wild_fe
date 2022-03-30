@@ -26,8 +26,8 @@ export default {
         `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
       const data = await res.json();
       this.user = data.data;
-      router.push({ name: 'HomePage', params: { user: this.user }})
-      // console.log(this.user, 'user')
+      this.$router.push({ name: 'HomePage', props: { user: this.user }})
+      console.log(this.user, 'user')
     },
     checkForm() {
       if (!this.username || !this.password) {
