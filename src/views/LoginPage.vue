@@ -1,21 +1,27 @@
+<script setup> 
+import { RouterLink } from "vue-router";
+import router from "../router";
+</script>
+
 <script>
 export default {
   data() {
     return {
       username: "",
       password: "",
+      loginError: false,
       user: {},
-      loginError: false
     };
   },
+  name: "LoginPage",
   methods: {
     async getUser() {
       const res = await fetch(
-        `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username}`);
+        `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
       const data = await res.json();
-      this.user = data;
-      this.$router.push("/guest");
-
+      this.user = data.data;
+      router.push('/guest')
+      console.log('user?', this.user)
     },
     checkForm() {
       if (!this.username || !this.password) {
@@ -39,8 +45,10 @@ export default {
       <label>Password:</label>
       <input type="password" name="password" required v-model="password" />
     </div>
-    <p v-if="loginError" class="login-error-msg" >Please fill out both fields in order to login!</p>
-    <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+    <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
+    <!-- <RouterLink @submit="this.checkForm" :value="user" to="/guest"> -->
+      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+    <!-- </RouterLink> -->
   </form>
 </template>
 

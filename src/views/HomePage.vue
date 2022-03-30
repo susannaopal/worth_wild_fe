@@ -4,6 +4,15 @@ import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
 </script>
 
+<script>
+// export default {
+//   props: {
+//     ...RouterLink.props,
+//    },
+//   }
+
+</script>
+
 <template>
   <body>
     <NavBar />
