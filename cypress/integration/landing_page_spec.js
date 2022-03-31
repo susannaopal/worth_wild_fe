@@ -1,13 +1,5 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-// describe("My First Test", () => {
-//   it("visits the app root url", () => {
-//     cy.visit("http://localhost:5050/");
-//     // cy.contains("h1", "You did it!");
-//   });
-// });
-
-
 describe('Landing Page User Flow', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5050/');
@@ -27,12 +19,14 @@ describe('Landing Page User Flow', () => {
       it('should see a button for a guest',() => {
         cy.get('body')
           .contains('Guest')
+          // .click()
           .should('be.visible')
       });
 
       it('should see a button for a user to login',() => {
         cy.get('body')
           .contains('Log In')
+          // .click()
           .should('be.visible')
       });
 
