@@ -37,7 +37,7 @@ export default {
       <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
-      <RouterLink to="/details" class="animal-card">{{ user }}</RouterLink>
+      <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink>
       <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
