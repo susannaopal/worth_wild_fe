@@ -1,11 +1,14 @@
 <script>
   import { RouterLink } from "vue-router";
   import NavBar from '../components/NavBar.vue';
+  import { store } from "../store.js"
 
   export default {
-  props: {
-    user: ["user"]
-   },
+  data () {
+    return {
+      store
+    }
+  }
   }
 </script>
 
@@ -13,18 +16,11 @@
   <body>
     <NavBar />
     <section class="user-info-section">
-      <h3 v-if="user">Welcome, {{ user.attributes.first_name }}</h3>
+      <h3 v-if="store">Welcome, {{ store.user.attributes.first_name }} {{ store.user.attributes.last_name }}</h3>
     </section>
     <h2>Favorites:</h2>
     <section class="user-favorite-animals">
-      <div class="animal-card">Animal here</div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
+      <div class="animal-card">{{ store.user.attributes.animals[0].common_name }}</div>
     </section>
   </body>
 </template>
