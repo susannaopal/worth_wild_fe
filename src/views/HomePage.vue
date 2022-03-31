@@ -37,7 +37,7 @@ export default {
       <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
-      <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink>
+      <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
       <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
@@ -107,7 +107,7 @@ export default {
   width: 400px;
   background-color:#556D1D;
   border-radius: 25px;
-  color: #556D1D;
+  /* color: #556D1D; */
   /* border: 3px solid #3b4b13; */
   border: 3px solid #526625;
   margin: 35px;

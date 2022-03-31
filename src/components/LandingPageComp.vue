@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { store } from "../store.js"
+import { store } from "../store.js";
 </script>
 <script>
   export default {
@@ -11,7 +11,7 @@ import { store } from "../store.js"
     },
     methods: {
       async getAnimals() {
-        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals ');
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals');
         const data = await res.json();
         store.animals = data.data;  
       }
