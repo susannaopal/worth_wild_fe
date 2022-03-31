@@ -2,16 +2,19 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
+import { store } from "../store.js"
 </script>
 
 <script>
 export default {
   name: "HomePage",
-  props: ["user"],
-  methods: {
-    // checkUser() {
-    //   console.log()
-    // }
+  data() {
+    return {
+      store
+    }
+  },
+  created () {
+    console.log(store, "Store")
   }
 }
 </script>

@@ -1,8 +1,9 @@
 <script setup> 
 import { RouterLink, RouterView } from "vue-router";
 import router from "../router";
-import HomePage from "./HomePage.vue"
-import UserProfile from "./UserProfile.vue"
+import HomePage from "./HomePage.vue";
+import UserProfile from "./UserProfile.vue";
+import { store } from "../store.js";
 </script>
 
 <script>
@@ -12,7 +13,7 @@ export default {
       username: "",
       password: "",
       loginError: false,
-      user: {},
+      store
     };
   },
   components: {
@@ -25,9 +26,8 @@ export default {
       const res = await fetch(
         `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
       const data = await res.json();
-      this.user = data.data;
-      this.$router.push({ name: 'HomePage', props: { user: this.user }})
-      console.log(this.user, 'user')
+      store.user = data.data;
+      this.$router.push({ name: 'HomePage'})
     },
     checkForm() {
       if (!this.username || !this.password) {
