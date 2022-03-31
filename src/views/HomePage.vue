@@ -13,10 +13,19 @@ export default {
       store
     }
   },
-  created () {
-    console.log(store, "Store")
+  created() {
+    this.getAnimals()    
+        console.log("Store", store)
+    },
+    methods: {
+      async getAnimals() {
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals');
+        const data = await res.json();
+        store.animals = data.data;
+      } 
+    }
+
   }
-}
 </script>
 
 <template>
