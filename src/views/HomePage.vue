@@ -3,6 +3,7 @@
 import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
 import { store } from "../store.js"
+import AnimalCardsSection from '@/components/AnimalCardsSection.vue'
 </script>
 
 <script>
@@ -46,15 +47,16 @@ export default {
       <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
+      <AnimalCardsSection :animals="store.animals" />
       <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
-      <div class="animal-card">Animal here</div>
+      <!-- <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
-      <div class="animal-card"></div>
+      <div class="animal-card"></div> -->
     </section>
   </body>
 </template>
