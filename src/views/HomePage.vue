@@ -37,8 +37,11 @@ export default {
     <section class="feature-info">
       <div class="feature-info-div">
         <h3>Animal of the Day</h3>
-        <img src="" alt="animal of the day" />
-        <h2>Animal Name</h2>
+        <img 
+          src="../assets/The-Red-Wolf.png" alt="animal of the day" 
+          class="animal-of-day"
+        />
+        <h2>Red Wolf</h2>
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
@@ -139,6 +142,10 @@ export default {
 .wwf-logo, a {
   display: flex;
   justify-content: center;
+  width: 70%;
+}
+
+.animal-of-day {
   width: 70%;
 }
 </style>
