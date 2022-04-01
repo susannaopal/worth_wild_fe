@@ -109,6 +109,7 @@ export default {
   border-radius: 35px;
   margin-top: 75px;
   width: 95vw;
+  overflow-y: auto;
 }
 
 .animal-card {
