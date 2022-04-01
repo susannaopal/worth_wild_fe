@@ -23,6 +23,7 @@ export default {
         const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals');
         const data = await res.json();
         store.animals = data.data;
+        store.animalLoading = false;
       } 
     }
 
@@ -47,6 +48,7 @@ export default {
       <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
+      <h2 v-if="store.animalLoading">Loading...</h2>
       <AnimalCardsSection :animals="store.animals" />
       <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
       <!-- <div class="animal-card">Animal here</div>
