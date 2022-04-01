@@ -4,6 +4,7 @@ import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
 import { store } from "../store.js"
 import AnimalCardsSection from '@/components/AnimalCardsSection.vue'
+import wwf_logo from "@/assets/wwf-logo.png"
 </script>
 
 <script>
@@ -41,7 +42,11 @@ export default {
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
-        <img src="" alt="organization image" />
+        <a href="https://www.worldwildlife.org/">
+          <img  
+            src="../assets/wwf-logo.png"   alt="organization image" class="wwf-logo"
+          />
+        </a>
       </div>
     </section>
     <section class="search-bar-div">
@@ -74,7 +79,7 @@ export default {
 .feature-info-div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   height: 35vh;
   width: 48%;
@@ -129,5 +134,11 @@ export default {
 
 .animal-card:hover {
   color: #e9e7dd;
+}
+
+.wwf-logo, a {
+  display: flex;
+  justify-content: center;
+  width: 70%;
 }
 </style>
