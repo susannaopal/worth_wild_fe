@@ -1,5 +1,15 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { store } from "../store.js";
+</script>
+<script>
+  export default {
+    data() {
+      return {
+        store
+      }
+    }
+  }
 </script>
 
 <template>

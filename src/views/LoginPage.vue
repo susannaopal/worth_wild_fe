@@ -1,10 +1,42 @@
+<script setup> 
+import { RouterLink, RouterView } from "vue-router";
+import router from "../router";
+import HomePage from "./HomePage.vue";
+import UserProfile from "./UserProfile.vue";
+import { store } from "../store.js";
+</script>
+
 <script>
 export default {
   data() {
     return {
       username: "",
       password: "",
+      loginError: false,
+      store
     };
+  },
+  components: {
+    HomePage,
+    UserProfile,
+    },
+  name: "LoginPage",
+  methods: {
+    async getUser() {
+      const res = await fetch(
+        `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
+      const data = await res.json();
+      store.user = data.data;
+      this.$router.push({ name: 'HomePage'})
+    },
+    checkForm() {
+      if (!this.username || !this.password) {
+        this.loginError = true;
+      } else {
+        this.loginError = false;
+        this.getUser();
+      }
+    },
   },
 };
 </script>
@@ -17,10 +49,14 @@ export default {
     </div>
     <div class="input-div">
       <label>Password:</label>
-      <input type="text" name="password" required v-model="password" />
+      <input type="password" name="password" required v-model="password" />
     </div>
-    <button class="login-btn" type="submit">Login</button>
+    <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
+    <!-- <RouterLink @click="this.checkForm" :to="{ name: 'HomePage', props: { user: user } }" class="login-btn">Submit -->
+      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+    <!-- </RouterLink> -->
   </form>
+  <RouterView />
 </template>
 
 <style>
@@ -48,6 +84,10 @@ input {
   width: 20em;
   margin-top: 5px;
   border: 3px solid #c8c097;
+  color: #432a0b;
+  font-weight: bold;
+  font-size: 15px;
+  padding-left: 15px;
 }
 
 .input-div {
@@ -70,6 +110,10 @@ input {
   transition: 0.2s;
   transform: scale(1.2);
   background-color: #556d1d;
+  color: #e9e7dd;
+}
+
+.login-error-msg {
   color: #e9e7dd;
 }
 </style>

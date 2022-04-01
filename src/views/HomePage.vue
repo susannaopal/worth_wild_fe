@@ -2,6 +2,32 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
+import { store } from "../store.js"
+import AnimalCardsSection from '@/components/AnimalCardsSection.vue'
+</script>
+
+<script>
+export default {
+  name: "HomePage",
+  data() {
+    return {
+      store
+    }
+  },
+  created() {
+    this.getAnimals()    
+        console.log("Store", store)
+    },
+    methods: {
+      async getAnimals() {
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals');
+        const data = await res.json();
+        store.animals = data.data;
+        store.animalLoading = false;
+      } 
+    }
+
+  }
 </script>
 
 <template>
@@ -19,18 +45,20 @@ import NavBar from "@/components/NavBar.vue";
       </div>
     </section>
     <section class="search-bar-div">
-      <input type="text" placeholder="Search by name" name="animal" class="search-bar" />
+      <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
     </section>
     <section class="animal-cards-section">
-      <RouterLink to="/details" class="animal-card">Animal Here</RouterLink>
-      <div class="animal-card">Animal here</div>
+      <h2 v-if="store.animalLoading">Loading...</h2>
+      <AnimalCardsSection :animals="store.animals" />
+      <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
+      <!-- <div class="animal-card">Animal here</div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
       <div class="animal-card"></div>
-      <div class="animal-card"></div>
+      <div class="animal-card"></div> -->
     </section>
   </body>
 </template>
@@ -83,6 +111,7 @@ import NavBar from "@/components/NavBar.vue";
   border-radius: 35px;
   margin-top: 75px;
   width: 95vw;
+  overflow-y: auto;
 }
 
 .animal-card {
@@ -92,7 +121,7 @@ import NavBar from "@/components/NavBar.vue";
   width: 400px;
   background-color:#556D1D;
   border-radius: 25px;
-  color: #556D1D;
+  /* color: #556D1D; */
   /* border: 3px solid #3b4b13; */
   border: 3px solid #526625;
   margin: 35px;

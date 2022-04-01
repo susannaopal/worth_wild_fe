@@ -28,8 +28,9 @@ const router = createRouter({
     },
     {
       path: "/guest",
-      name: "guest",
+      name: "HomePage",
       component: HomePage,
+      props: true,
     },
     {
       path: "/user-profile",
