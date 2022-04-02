@@ -8,7 +8,7 @@ export default {
 
 <template>
   <div class="card-div">
-    <RouterLink to="/details" class="link">
+    <RouterLink to="/details" class="animal-card-link">
       <p>{{ commonName }}</p>
       <p>{{ scientificName }}</p>
       <p>{{ gRankReasons }}</p>
@@ -18,8 +18,12 @@ export default {
 
 <style>
   .card-div {
+    width: 95%;
+  }
+
+  .animal-card-link {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 10%;
     width: 95%;
@@ -27,9 +31,8 @@ export default {
     color: #432A0B;
   }
 
-  .card-div:hover {
+  .animal-card-link:hover {
   background-color: #D4CA98;
   cursor: pointer;
 }
-
 </style>

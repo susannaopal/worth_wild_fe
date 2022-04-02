@@ -150,7 +150,8 @@ export default {
 }
 
 .animal-of-day-img {
-  height: 50%;
+  height: 150px;
+  width: 225px;
   margin-bottom: 15px;
 }
 </style>
