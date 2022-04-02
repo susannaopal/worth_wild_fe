@@ -41,13 +41,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
-
-/* .logo-div {
-  height: 500px;
-  width: 200vw;
-  border: 2px solid #334111;
-} */
 
 .logo {
   height: 400px;

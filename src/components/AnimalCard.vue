@@ -19,12 +19,13 @@ export default {
 <style>
   .card-div {
     width: 95%;
+    margin-left: 70px;
   }
 
   .animal-card-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 22%;
     height: 10%;
     width: 95%;
     border-bottom: 2px solid #C8C097;

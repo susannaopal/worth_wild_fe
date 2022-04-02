@@ -21,9 +21,10 @@ import AnimalCard from './AnimalCard.vue'
 <style>
   .card-section {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    overflow: scroll;
+    /* overflow: scroll; */
   }
 </style>

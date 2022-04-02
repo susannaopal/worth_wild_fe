@@ -131,18 +131,6 @@ export default {
   overflow-y: auto;
 }
 
-/* .animal-card {
-  display: flex;
-  justify-content: center;
-  height: 300px;
-  width: 400px;
-  background-color:#556D1D;
-  border-radius: 25px;
-  color: #432A0B; 
-  border: 3px solid #526625;
-  margin: 35px;
-} */
-
 .wwf-logo, a {
   display: flex;
   justify-content: center;
