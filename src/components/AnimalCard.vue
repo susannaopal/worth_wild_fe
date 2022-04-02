@@ -7,9 +7,9 @@ export default {
 
 <template>
   <div class="card-div">
-    <p>Common Name: {{ commonName }}</p>
-    <p>Scientific Name: {{ scientificName }}</p>
-    <p>Conservation Status: {{ gRankReasons }}</p>
+    <p>{{ commonName }}</p>
+    <p>{{ scientificName }}</p>
+    <p>{{ gRankReasons }}</p>
   </div>
 </template>
 

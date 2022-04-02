@@ -53,20 +53,20 @@ export default {
       </div>
     </section>
     <section class="search-bar-div">
-      <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
+      <input 
+        type="text" 
+        placeholder="Search by name" name="animal" 
+        class="search-bar" 
+      />
     </section>
+    <div class="labels-container">
+      <h3 class="label">Common Name</h3>
+      <h3 class="label">Scientific Name</h3>
+      <h3 class="label">Conservation Status</h3>
+    </div>
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading">Loading...</h2>
       <AnimalCardsSection :animals="store.animals" />
-      <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
-      <!-- <div class="animal-card">Animal here</div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div> -->
     </section>
   </body>
 </template>
@@ -109,6 +109,17 @@ export default {
   padding-left: 30px;
 }
 
+.labels-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  margin: 70px 0px 10px;
+}
+
+.label {
+  font-size: x-large;
+}
+
 .animal-cards-section {
   display: flex;
   justify-content: center;
@@ -117,7 +128,7 @@ export default {
   background-color: #E9E7DD;
   border: 3px solid #C8C097;
   border-radius: 35px;
-  margin-top: 75px;
+  /* margin-top: 75px; */
   width: 95vw;
   overflow-y: auto;
 }
