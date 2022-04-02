@@ -6,6 +6,11 @@ export default {
     return {
       store
     }
+  },
+  methods: {
+    logoutUser() {
+      store.isLoggedIn = false 
+    }
   }
 }
 </script>
@@ -20,8 +25,8 @@ export default {
     </div>
     <div class="nav-buttons-div">
       <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
-      <RouterLink v-if="store.user.isLoggedIn" to="/main" class="nav-btn" >Main</RouterLink>
-      <button v-if="store.user.attributes" class="nav-btn">Logout</button>
+      <RouterLink v-if="store.isLoggedIn" to="/main" class="nav-btn" >Main</RouterLink>
+      <RouterLink v-if="store.user.attributes" to="/" class="nav-btn">Logout</RouterLink>
       <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
   </header>

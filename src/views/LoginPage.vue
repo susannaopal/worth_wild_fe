@@ -13,6 +13,7 @@ export default {
       username: "",
       password: "",
       loginError: false,
+      isLoggedIn: store.isLoggedIn,
       store
     };
   },
@@ -34,6 +35,7 @@ export default {
         this.loginError = true;
       } else {
         this.loginError = false;
+        store.isLoggedIn = true
         this.getUser();
       }
     },
