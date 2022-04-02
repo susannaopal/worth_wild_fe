@@ -13,7 +13,7 @@ export default {
       username: "",
       password: "",
       loginError: false,
-      isLoggedIn: store.isLoggedIn,
+      // isLoggedIn: store.isLoggedIn,
       store
     };
   },

@@ -17,7 +17,6 @@ export default {
   },
   created() {
     this.getAnimals()    
-        console.log("Store", store)
     },
     methods: {
       async getAnimals() {
