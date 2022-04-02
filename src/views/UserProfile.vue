@@ -4,16 +4,16 @@
   import { store } from "../store.js"
 
   export default {
-  data () {
-    return {
-      store
-    }
-  },
+    data () {
+      return {
+        store
+      }
+    },
     methods: {
       capitalizeName(string) {
         const splitString = string.split(' ')
         const capitalizedWords = splitString.map( word =>  {
-         return word.charAt(0).toUpperCase() + word.slice(1)
+          return word.charAt(0).toUpperCase() + word.slice(1)
         })
         return capitalizedWords.join(' ')
       }

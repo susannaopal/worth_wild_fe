@@ -20,7 +20,7 @@ export default {
   <header>
     <div class="logo-tagline-div">
       <div class="logo-div">
-        <img require src="../assets/worth_wild.png" class="nav-logo" alt="worth wild logo" />
+        <img require src="../assets/worth_wild_logo.png" class="nav-logo" alt="worth wild logo" />
       </div>
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
@@ -53,15 +53,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18%;
-  background-color: #e9e7dd;
-  border-radius: 70px;
-  padding: 15px;
+  width: 8vw;
+  height: 12vh;
+  background-color: #bccf8f;
+  border-radius: 170px;
+  padding: 25px;
   margin: 10px 35px 10px 15px;
 }
 
 .nav-logo {
-  width: 95%;
+  transform: scale(.25);
 }
 
 .tagline {

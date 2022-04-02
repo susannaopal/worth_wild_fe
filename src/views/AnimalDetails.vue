@@ -36,7 +36,9 @@
     },
 
     methods: {
-      
+      fetchAnimalDetails() {
+        
+      }
     }
   }
 </script>
