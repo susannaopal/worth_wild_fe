@@ -18,9 +18,9 @@ export default {
       </div>
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
-    <div class="nav-buttons">
+    <div class="nav-buttons-div">
       <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
-      <RouterLink to="/main" class="nav-btn" >Main</RouterLink>
+      <RouterLink v-if="store.user.isLoggedIn" to="/main" class="nav-btn" >Main</RouterLink>
       <button v-if="store.user.attributes" class="nav-btn">Logout</button>
       <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
@@ -63,7 +63,7 @@ header {
   font-size: 45px;
 }
 
-.nav-buttons {
+.nav-buttons-div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -76,9 +76,11 @@ header {
 .nav-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #432a0b;
   background-color: #e9e7dd;
   width: 80%;
+  height: 33%;
   border-radius: 25px;
   border: 3px solid #bcb8a1;
   font-size: large;
