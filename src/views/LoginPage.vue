@@ -53,7 +53,10 @@ export default {
       <input type="password" name="password" required v-model="password" />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
+    <div class="button-div">
       <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+      <RouterLink to="/" class="login-btn">Back</RouterLink>
+    </div>
   </form>
   <RouterView />
 </template>
@@ -95,11 +98,15 @@ input {
 }
 
 .login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #432a0b;
   background-color: #e9e7dd;
   width: 20%;
-  border-radius: 25px;
   height: 35px;
+  margin: 0px 20px;
+  border-radius: 25px;
   border: 3px solid #bcb8a1;
   font-size: large;
   cursor: pointer;
@@ -110,6 +117,12 @@ input {
   transform: scale(1.2);
   background-color: #556d1d;
   color: #e9e7dd;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .login-error-msg {

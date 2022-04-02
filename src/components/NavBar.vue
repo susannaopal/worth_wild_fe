@@ -25,10 +25,10 @@ export default {
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
     <div class="nav-buttons-div">
-      <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
+      <RouterLink v-if="store.user.attributes && this.$route.path !== '/user-profile'" to="/user-profile" class="nav-btn">User Profile</RouterLink>
       <RouterLink v-if="store.isLoggedIn && this.$route.path !== '/main'" to="/main" class="nav-btn" >Home</RouterLink>
       <RouterLink v-if="store.user.attributes" to="/" @click="logoutUser" class="nav-btn">Logout</RouterLink>
-      <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
+      <RouterLink to="/login" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
   </header>
 </template>
@@ -74,7 +74,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  margin-right: 15px;
+  margin-right: 45px;
   height: 100%;
   width: 10%;
 }
