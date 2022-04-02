@@ -26,7 +26,7 @@ export default {
     </div>
     <div class="nav-buttons-div">
       <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
-      <RouterLink v-if="store.isLoggedIn && window.location.pathname !== '/main'" to="/main" class="nav-btn" >Home</RouterLink>
+      <RouterLink v-if="store.isLoggedIn && this.$route.path !== '/main'" to="/main" class="nav-btn" >Home</RouterLink>
       <RouterLink v-if="store.user.attributes" to="/" @click="logoutUser" class="nav-btn">Logout</RouterLink>
       <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
