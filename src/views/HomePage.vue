@@ -4,6 +4,7 @@ import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
 import { store } from "../store.js"
 import AnimalCardsSection from '@/components/AnimalCardsSection.vue'
+import wwf_logo from "@/assets/wwf-logo.png"
 </script>
 
 <script>
@@ -36,29 +37,36 @@ export default {
     <section class="feature-info">
       <div class="feature-info-div">
         <h3>Animal of the Day</h3>
-        <img src="" alt="animal of the day" />
-        <h2>Animal Name</h2>
+        <img 
+          src="../assets/The-Red-Wolf.png" alt="animal of the day" 
+          class="animal-of-day"
+        />
+        <h2>Red Wolf</h2>
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
-        <img src="" alt="organization image" />
+        <a href="https://www.worldwildlife.org/">
+          <img  
+            src="../assets/wwf-logo.png"   alt="organization image" class="wwf-logo"
+          />
+        </a>
       </div>
     </section>
     <section class="search-bar-div">
-      <input @keydown='this.checkUser()' type="text" placeholder="Search by name" name="animal" class="search-bar" />
+      <input 
+        type="text" 
+        placeholder="Search by name" name="animal" 
+        class="search-bar" 
+      />
     </section>
+    <div class="labels-container">
+      <h3 class="label">Common Name</h3>
+      <h3 class="label">Scientific Name</h3>
+      <h3 class="label">Conservation Status</h3>
+    </div>
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading">Loading...</h2>
       <AnimalCardsSection :animals="store.animals" />
-      <!-- <RouterLink to="/details" class="animal-card">{{ store.user.attributes.first_name }}</RouterLink> -->
-      <!-- <div class="animal-card">Animal here</div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div> -->
     </section>
   </body>
 </template>
@@ -74,7 +82,7 @@ export default {
 .feature-info-div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   height: 35vh;
   width: 48%;
@@ -101,6 +109,17 @@ export default {
   padding-left: 30px;
 }
 
+.labels-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  margin: 70px 0px 10px;
+}
+
+.label {
+  font-size: x-large;
+}
+
 .animal-cards-section {
   display: flex;
   justify-content: center;
@@ -109,25 +128,29 @@ export default {
   background-color: #E9E7DD;
   border: 3px solid #C8C097;
   border-radius: 35px;
-  margin-top: 75px;
   width: 95vw;
   overflow-y: auto;
 }
 
-.animal-card {
+/* .animal-card {
   display: flex;
   justify-content: center;
   height: 300px;
   width: 400px;
   background-color:#556D1D;
   border-radius: 25px;
-  /* color: #556D1D; */
-  /* border: 3px solid #3b4b13; */
+  color: #432A0B; 
   border: 3px solid #526625;
   margin: 35px;
+} */
+
+.wwf-logo, a {
+  display: flex;
+  justify-content: center;
+  width: 70%;
 }
 
-.animal-card:hover {
-  color: #e9e7dd;
+.animal-of-day {
+  width: 70%;
 }
 </style>
