@@ -146,7 +146,7 @@ export default {
 .wwf-logo, a {
   display: flex;
   justify-content: center;
-  height: 70%;
+  height: 85%;
 }
 
 .animal-of-day-img {
