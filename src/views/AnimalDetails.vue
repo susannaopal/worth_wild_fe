@@ -67,7 +67,7 @@
     </section>
     <div class="bottom-btns">
       <button class="landing-btns">Favorite</button>
-      <RouterLink to="/guest" class="landing-btns">Back</RouterLink>
+      <RouterLink to="/main" class="landing-btns">Back</RouterLink>
     </div>
   </body>
 </template>

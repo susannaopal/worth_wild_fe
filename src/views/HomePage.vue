@@ -128,27 +128,21 @@ export default {
   background-color: #E9E7DD;
   border: 3px solid #C8C097;
   border-radius: 35px;
-  /* margin-top: 75px; */
   width: 95vw;
   overflow-y: auto;
 }
 
-.animal-card {
+/* .animal-card {
   display: flex;
   justify-content: center;
   height: 300px;
   width: 400px;
   background-color:#556D1D;
   border-radius: 25px;
-  /* color: #556D1D; */
-  /* border: 3px solid #3b4b13; */
+  color: #432A0B; 
   border: 3px solid #526625;
   margin: 35px;
-}
-
-.animal-card:hover {
-  color: #e9e7dd;
-}
+} */
 
 .wwf-logo, a {
   display: flex;

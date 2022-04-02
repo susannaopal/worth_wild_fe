@@ -1,5 +1,13 @@
 <script>
 import { RouterLink } from "vue-router";
+import { store } from "../store.js"
+export default {
+  data() {
+    return {
+      store
+    }
+  }
+}
 </script>
 
 <template>
@@ -11,9 +19,10 @@ import { RouterLink } from "vue-router";
       <h1 class="tagline">Are they worth it to you?</h1>
     </div>
     <div class="nav-buttons">
-      <RouterLink to="/user-profile" class="nav-btn">User Profile</RouterLink>
-      <RouterLink to="/guest" class="nav-btn">Main</RouterLink>
-      <button class="nav-btn">Logout</button>
+      <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
+      <RouterLink to="/main" class="nav-btn" >Main</RouterLink>
+      <button v-if="store.user.attributes" class="nav-btn">Logout</button>
+      <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
   </header>
 </template>

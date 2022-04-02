@@ -18,7 +18,7 @@ import { store } from "../store.js";
       <img required src="../assets/worth_wild.png" class="logo" />
     <!-- </div> -->
     <div class="landing-page-links">
-      <RouterLink to="/guest" class="landing-btns">Guest</RouterLink>
+      <RouterLink to="/main" class="landing-btns">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">
