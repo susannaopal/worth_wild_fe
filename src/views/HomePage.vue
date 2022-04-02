@@ -10,13 +10,15 @@ import wwf_logo from "@/assets/wwf-logo.png";
 <script>
 export default {
   name: "HomePage",
-  data() {
-    return {
-      store
-    }
-  },
-  created() {
-    this.getAnimals()    
+    data() {
+      return {
+        store,
+        searchPhrase: '',
+        searchedAnimals: [],
+      }
+    },
+    created() {
+      this.getAnimals()  
     },
     methods: {
       async getAnimals() {
@@ -25,6 +27,14 @@ export default {
         store.animals = data.data;
         store.animalLoading = false;
       } 
+    },
+    computed: {
+      filterAnimals() {
+        const filteredAnimals = store.animals.filter(animal => {
+          return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
+        })
+        this.searchedAnimals = filteredAnimals
+      }
     }
   }
 </script>
@@ -51,7 +61,7 @@ export default {
       </div>
     </section>
     <section class="search-bar-div">
-      <input 
+      <input v-model="searchPhrase"
         type="text" 
         placeholder="Search by name" name="animal" 
         class="search-bar" 
@@ -64,7 +74,8 @@ export default {
     </div>
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading">Loading...</h2>
-      <AnimalCardsSection :animals="store.animals" />
+      <AnimalCardsSection v-if="this.searchedAnimals.length > 0" :animals="this.searchedAnimals" />
+      <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>
 </template>
