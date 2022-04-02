@@ -82,5 +82,6 @@
 h2 {
   font-size: 35px;
   color: #432A0B;
+  margin: 0;
 }
 </style>

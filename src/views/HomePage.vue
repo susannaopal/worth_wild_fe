@@ -2,9 +2,9 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import NavBar from "@/components/NavBar.vue";
-import { store } from "../store.js"
-import AnimalCardsSection from '@/components/AnimalCardsSection.vue'
-import wwf_logo from "@/assets/wwf-logo.png"
+import { store } from "../store.js";
+import AnimalCardsSection from '@/components/AnimalCardsSection.vue';
+import wwf_logo from "@/assets/wwf-logo.png";
 </script>
 
 <script>
@@ -27,7 +27,6 @@ export default {
         store.animalLoading = false;
       } 
     }
-
   }
 </script>
 
@@ -39,7 +38,7 @@ export default {
         <h3>Animal of the Day</h3>
         <img 
           src="../assets/The-Red-Wolf.png" alt="animal of the day" 
-          class="animal-of-day"
+          class="animal-of-day-img"
         />
         <h2>Red Wolf</h2>
       </div>
@@ -147,10 +146,11 @@ export default {
 .wwf-logo, a {
   display: flex;
   justify-content: center;
-  width: 70%;
+  height: 70%;
 }
 
-.animal-of-day {
-  width: 70%;
+.animal-of-day-img {
+  height: 50%;
+  margin-bottom: 15px;
 }
 </style>
