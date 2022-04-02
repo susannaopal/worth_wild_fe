@@ -10,7 +10,6 @@ export default {
   methods: {
     logoutUser() {
       store.isLoggedIn = false 
-      console.log("clicked logged out, what the hell")
       store.user = {}
     }
   }
@@ -27,7 +26,7 @@ export default {
     </div>
     <div class="nav-buttons-div">
       <RouterLink v-if="store.user.attributes" to="/user-profile" class="nav-btn">User Profile</RouterLink>
-      <RouterLink v-if="store.isLoggedIn" to="/main" class="nav-btn" >Main</RouterLink>
+      <RouterLink v-if="store.isLoggedIn && window.location.pathname !== '/main'" to="/main" class="nav-btn" >Home</RouterLink>
       <RouterLink v-if="store.user.attributes" to="/" @click="logoutUser" class="nav-btn">Logout</RouterLink>
       <RouterLink to="/" v-if="!store.user.attributes" class="nav-btn">Login</RouterLink>
     </div>
@@ -92,6 +91,7 @@ header {
   border: 3px solid #bcb8a1;
   font-size: large;
   cursor: pointer;
+  margin: 5px 0px;
 }
 
 .nav-btn:hover {

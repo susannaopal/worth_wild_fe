@@ -13,7 +13,6 @@ export default {
       username: "",
       password: "",
       loginError: false,
-      // isLoggedIn: store.isLoggedIn,
       store
     };
   },
@@ -54,9 +53,7 @@ export default {
       <input type="password" name="password" required v-model="password" />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
-    <!-- <RouterLink @click="this.checkForm" :to="{ name: 'HomePage', props: { user: user } }" class="login-btn">Submit -->
       <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
-    <!-- </RouterLink> -->
   </form>
   <RouterView />
 </template>

@@ -4,5 +4,6 @@ export const store = reactive({
   user: {},
   animals: [],
   animalLoading: true,
-  isLoggedIn: false
+  isLoggedIn: false,
+  currentPage: window.location.pathname
 })

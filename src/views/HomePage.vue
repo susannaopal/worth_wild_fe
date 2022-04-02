@@ -80,7 +80,6 @@ export default {
 .feature-info-div {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
   height: 35vh;
   width: 48%;
