@@ -12,7 +12,17 @@
     methods: {
         removeTags(str) {
         return str.replace( /(<([^>]+)>)/ig, '');
-      }
+      },
+      postFavoriteAnimal() {
+        console.log("are you even working?")
+        const favAnimal = {user_id: store.user.id, animal_id: store.animalDetails.id}
+        return fetch('https://secure-island-06435.herokuapp.com/api/v1/users', {
+          method: 'POST',
+          body: JSON.stringify(favAnimal),
+          headers: {'Content-Type': 'application/json'}
+        }).then(response => response.json())
+          .catch(error => console.log(error))
+      }     
     }
   }
 </script>
@@ -42,7 +52,7 @@
       </section>
     </section>
     <div class="bottom-btns">
-      <button v-if="store.isLoggedIn" class="landing-btns">Favorite</button>
+      <button v-if="store.isLoggedIn" @click="postFavoriteAnimal" class="landing-btns">Favorite</button>
       <RouterLink to="/main" class="landing-btns">Back</RouterLink>
     </div>
   </body>
