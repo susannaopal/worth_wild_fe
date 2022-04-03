@@ -58,7 +58,7 @@ export default {
         <h3>Featured Organization</h3>
         <a href="https://www.worldwildlife.org/">
           <img  
-            src="../assets/wwf-logo.png"   alt="organization image" class="wwf-logo"
+            src="../assets/wwf-logo.png" alt="organization image" class="wwf-logo"
           />
         </a>
       </div>
@@ -88,73 +88,75 @@ export default {
 </template>
 
 <style>
-.feature-info {
-  display: flex;
-  justify-content: space-around;
-  width: 98vw;
-  height: 40vh;
-}
+  .feature-info {
+    display: flex;
+    justify-content: space-around;
+    width: 98vw;
+    height: 40vh;
+  }
 
-.feature-info-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 35vh;
-  width: 48%;
-  background-color: #e9e7dd;
-  border: 3px solid #C8C097;
-  border-radius: 50px;
-  margin: 15px 30px;
-}
+  .feature-info-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35vh;
+    width: 48%;
+    background-color: #e9e7dd;
+    border: 3px solid #C8C097;
+    border-radius: 50px;
+    margin: 15px 30px;
+  }
 
-.search-bar-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 7vh;
-  width: 100vw;
-  background-color: #3b4b13;
-}
+  .search-bar-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    width: 100vw;
+    background-color: #3b4b13;
+  }
 
-.search-bar {
-  height: 55%;
-  background-color: #e9e7dd;
-  margin: 0;
-  font-size: larger;
-  padding-left: 30px;
-}
+  .search-bar {
+    height: 55%;
+    background-color: #e9e7dd;
+    margin: 0;
+    font-size: larger;
+    padding-left: 30px;
+  }
 
-.labels-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100vw;
-  margin: 70px 0px 10px;
-}
+  .labels-container {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 16%;
+    width: 100vw;
+    margin: 40px 0px 10px 400px;
+  }
 
-.label {
-  font-size: x-large;
-}
+  .label {
+    font-size: x-large;
+  }
 
-.animal-cards-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #E9E7DD;
-  border: 3px solid #C8C097;
-  border-radius: 35px;
-  width: 95vw;
-}
+  .animal-cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #E9E7DD;
+    border: 3px solid #C8C097;
+    border-radius: 35px;
+    width: 95vw;
+    padding-right: 25px;
+  }
 
-.wwf-logo, a {
-  display: flex;
-  justify-content: center;
-  height: 85%;
-}
+  .wwf-logo, a {
+    display: flex;
+    justify-content: center;
+    height: 85%;
+  }
 
-.animal-of-day-img {
-  height: 150px;
-  width: 225px;
-  margin-bottom: 15px;
-}
+  .animal-of-day-img {
+    height: 150px;
+    width: 225px;
+    margin-bottom: 15px;
+  }
 </style>

@@ -53,10 +53,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8vw;
+  width: 6vw;
   height: 12vh;
   background-color: #bccf8f;
-  border-radius: 170px;
+  border-radius: 50%;
   padding: 25px;
   margin: 10px 35px 10px 15px;
 }
