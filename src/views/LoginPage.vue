@@ -60,8 +60,8 @@ export default {
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
     <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
     <div class="button-div">
-      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
       <RouterLink to="/" class="login-btn">Back</RouterLink>
+      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
     </div>
   </form>
   <RouterView />
