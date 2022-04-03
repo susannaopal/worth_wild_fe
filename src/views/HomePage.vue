@@ -29,6 +29,7 @@ export default {
           const data = await res.json();
           store.animals = data.data;
           store.animalLoading = false;
+          store.error = '';
         }
       },
       filterAnimals() {

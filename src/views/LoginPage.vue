@@ -25,9 +25,14 @@ export default {
     async getUser() {
       const res = await fetch(
         `https://secure-island-06435.herokuapp.com/api/v1/dashboard?username=${this.username.toLowerCase()}`);
-      const data = await res.json();
-      store.user = data.data;
-      this.$router.push({ name: 'HomePage'})
+        if (!res.ok) {
+          store.error = res.statusText
+        } else {
+          const data = await res.json();
+          store.user = data.data;
+          this.$router.push({ name: 'HomePage'})
+          store.error = '';
+        }
     },
     checkForm() {
       if (!this.username || !this.password) {
@@ -53,6 +58,7 @@ export default {
       <input type="password" name="password" required v-model="password" />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
+    <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
     <div class="button-div">
       <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
       <RouterLink to="/" class="login-btn">Back</RouterLink>
