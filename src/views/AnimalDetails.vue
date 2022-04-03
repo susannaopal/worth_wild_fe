@@ -9,22 +9,6 @@
         store
       }
     },
-    created() {
-      console.log('WHAT IS THIS!?!?!?!??!!!?!?!', store.animalDetails)
-    },
-
-    methods: {
-      // async fetchAnimalDetails() {
-      //   const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=Southern Kidneyshell&element_code')
-      //   if (!res.ok){
-      //     store.error = res.statusText
-      //   } else {
-      //     const data = await res.json();
-      //     this.animal = data.data;
-      //     store.error = '';
-      //   }
-      //  }
-    }
   }
 </script>
 
@@ -32,10 +16,10 @@
   <body>
     <NavBar />
     <section class="animal-details">
-      <!-- <div :style="{'background-image': `url(${store.animalDetails.attributes.imageUrl})`}" class="animal-picture-div"> -->
+      <div :style="{'background-image': `url(${store.animalDetails.imageUrl})`}" class="animal-picture-div">
         <h2 class="name">{{ store.animalDetails.common_name.toUpperCase() }}</h2>
         <h3 class="status">{{ store.animalDetails.vulnerability.gRankReasons }}</h3>
-      <!-- </div> -->
+      </div>
       <section class="animal-facts">
         <div class="scientific-class-div">
           <p class="scientific-classification">Phylum: {{ store.animalDetails.phylum }}</p>

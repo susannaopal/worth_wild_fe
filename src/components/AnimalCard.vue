@@ -8,18 +8,14 @@
     props: ['commonName', 'scientificName', 'gRankReasons', 'id'],
     methods: {
       async fetchAnimalDetails(name, id) {
-        console.log('fetch call', name)
       const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
         if (!res.ok){
           store.error = res.statusText
         } else {
           const data = await res.json();
-          console.log('data', data)
           store.animalDetails = data.attributes;
           store.error = '';
-          setTimeout(() => {
-            router.push('/details')
-          }, 1000)
+          router.push('/details')
         }
       }
     }
