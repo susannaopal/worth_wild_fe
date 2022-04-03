@@ -14,23 +14,13 @@ import { store } from "../store.js";
 
 <template>
   <body>
-    <!-- <div class="logo-div"> -->
-      <img required src="../assets/worth_wild.png" class="logo" />
-    <!-- </div> -->
+    <img required src="../assets/worth_wild_logo.png" class="logo" />
     <div class="landing-page-links">
       <RouterLink to="/main" class="landing-btns">Guest</RouterLink>
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Sit amet est placerat
-      in. Pulvinar etiam non quam lacus suspendisse. Mauris vitae ultricies leo
-      integer. Tincidunt arcu non sodales neque sodales ut. Eget est lorem ipsum
-      dolor. Eu consequat ac felis donec et odio pellentesque diam. Enim ut
-      tellus elementum sagittis vitae et leo. Ut pharetra sit amet aliquam id
-      diam. Tortor posuere ac ut consequat semper viverra nam. Semper viverra
-      nam libero justo. Viverra maecenas accumsan lacus vel facilisis. Mauris
-      ultrices eros in cursus turpis massa. Dui accumsan sit amet nulla.
+      Worth Wild's mission is to bring awareness to North American wild life species that are critically endangered and underrepresented. They need our help before it is too late and they are lost to us forever. To work towards this mission, we created an application that allows users to view local animals and learn more about them; including their endangered status.
     </p>
   </body>
 </template>
@@ -41,19 +31,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
-
-/* .logo-div {
-  height: 500px;
-  width: 200vw;
-  border: 2px solid #334111;
-} */
 
 .logo {
   height: 400px;
   background-color: #bccf8f;
-  border-radius: 50px;
-  padding: 25px;
+  border-radius: 50%;
+  padding: 20px 20px 35px 25px;
   margin: 15px 0px;
 }
 
@@ -63,6 +48,8 @@ body {
   width: 50%;
   padding: 35px 25px;
   border-radius: 20px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 a {
