@@ -23,9 +23,13 @@ export default {
     methods: {
       async getAnimals() {
         const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animals');
-        const data = await res.json();
-        store.animals = data.data;
-        store.animalLoading = false;
+        if (!res.ok) {
+          store.error = res.statusText
+        } else {
+          const data = await res.json();
+          store.animals = data.data;
+          store.animalLoading = false;
+        }
       },
       filterAnimals() {
         const filtered = store.animals.filter(animal => {
@@ -73,7 +77,8 @@ export default {
       <h3 class="label">Conservation Status</h3>
     </div>
     <section class="animal-cards-section">
-      <h2 v-if="store.animalLoading">Loading...</h2>
+      <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
+      <h2 v-else-if="store.error">{{ store.error }}</h2>
       <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
