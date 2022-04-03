@@ -29,10 +29,8 @@ export default {
       },
       filterAnimals() {
         const filtered = store.animals.filter(animal => {
-          console.log("i work")
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
         })
-        console.log(filtered, "filtered")
         this.searchedAnimals = filtered
       } 
     }
@@ -139,7 +137,6 @@ export default {
   border: 3px solid #C8C097;
   border-radius: 35px;
   width: 95vw;
-  overflow-y: auto;
 }
 
 .wwf-logo, a {
