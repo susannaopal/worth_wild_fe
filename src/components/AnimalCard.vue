@@ -17,9 +17,8 @@
           store.error = '';
           router.push('/details')
         }
-      }
+      }       
     }
-
   }
 </script>
 

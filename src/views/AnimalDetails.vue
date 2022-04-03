@@ -9,6 +9,11 @@
         store
       }
     },
+    methods: {
+        removeTags(str) {
+        return str.replace( /(<([^>]+)>)/ig, '');
+      }
+    }
   }
 </script>
 
@@ -32,7 +37,7 @@
         <div class="threats-div">
           <p class="threats-info">Currently there are {{ store.animalDetails.popSize }} in America. {{ store.animalDetails.shortTermTrend }}</p>
           <h4>Threats to the {{ store.animalDetails.common_name.toUpperCase() }}:</h4>
-          <p class="threats-info">{{ store.animalDetails.habitatComments }} {{ store.animalDetails.threatImpactComments }}</p>
+          <p class="threats-info">{{ store.animalDetails.habitatComments }} {{ removeTags(store.animalDetails.threatImpactComments) }}</p>
         </div>
       </section>
     </section>
