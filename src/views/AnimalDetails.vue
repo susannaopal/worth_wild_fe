@@ -14,7 +14,6 @@
         return str.replace( /(<([^>]+)>)/ig, '');
       },
       postFavoriteAnimal() {
-        console.log("are you even working?")
         const favAnimal = {user_id: store.user.id, animal_id: store.animalDetails.id}
         return fetch('https://secure-island-06435.herokuapp.com/api/v1/users', {
           method: 'POST',
