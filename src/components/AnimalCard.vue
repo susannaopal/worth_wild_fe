@@ -35,7 +35,6 @@
     grid-gap: 22%;
     height: 10%;
     width: 95%;
-    /* border-bottom: 2px solid #C8C097; */
     color: #432A0B;
   }
 

@@ -81,19 +81,19 @@
   .animal-card {
     display: grid;
     grid-template-columns: repeat(3, 250px);
-    grid-gap: 20%;
+    grid-gap: 22%;
     height: 100px;
     width: 95%;
     border-bottom: 3px solid #C8C097;
   }
 
-.animal-details-p {
-  margin-left: 70px;
-}
+  .animal-details-p {
+    margin-left: 70px;
+  }
 
-h2 {
-  font-size: 35px;
-  color: #432A0B;
-  margin: 0;
-}
+  h2 {
+    font-size: 35px;
+    color: #432A0B;
+    margin: 0;
+  }
 </style>

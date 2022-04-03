@@ -134,6 +134,9 @@ export default {
 
   .label {
     font-size: x-large;
+    color: #432A0B;
+    border-bottom: 2px solid #432A0B;
+    text-align: center;
   }
 
   .animal-cards-section {
