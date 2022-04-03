@@ -2,7 +2,7 @@
 </script>
 
 <script>
-  import { RouterLink } from "vue-router";
+  import router from "../router/index";
   import { store } from '../store.js';
   export default {
     props: ['commonName', 'scientificName', 'gRankReasons', 'id'],
@@ -15,8 +15,11 @@
         } else {
           const data = await res.json();
           console.log('data', data)
-          store.animalDetails = data.data;
+          store.animalDetails = data.attributes;
           store.error = '';
+          setTimeout(() => {
+            router.push('/details')
+          }, 1000)
         }
       }
     }
@@ -26,12 +29,12 @@
 
 
 <template>
-  <div class="card-div">
-    <RouterLink @click.prevent="fetchAnimalDetails(commonName, id)" to="/details" class="animal-card-link">
+  <div @click.self="fetchAnimalDetails(commonName, id)" class="card-div">
+    <div class="animal-card-link">
       <p>{{ commonName }}</p>
       <p>{{ scientificName }}</p>
       <p>{{ gRankReasons }}</p>
-    </RouterLink>
+    </div>
   </div>
   <div class="line"></div>
 </template>
