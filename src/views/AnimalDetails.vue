@@ -37,7 +37,7 @@
       </section>
     </section>
     <div class="bottom-btns">
-      <button class="landing-btns">Favorite</button>
+      <button v-if="store.isLoggedIn" class="landing-btns">Favorite</button>
       <RouterLink to="/main" class="landing-btns">Back</RouterLink>
     </div>
   </body>

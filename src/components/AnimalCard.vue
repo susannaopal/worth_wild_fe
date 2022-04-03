@@ -25,7 +25,7 @@
 
 
 <template>
-  <div @click.self="fetchAnimalDetails(commonName, id)" class="card-div">
+  <div @click="fetchAnimalDetails(commonName, id)" class="card-div">
     <div class="animal-card-link">
       <p>{{ commonName }}</p>
       <p>{{ scientificName }}</p>
