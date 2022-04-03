@@ -26,15 +26,15 @@ export default {
         const data = await res.json();
         store.animals = data.data;
         store.animalLoading = false;
-      } 
-    },
-    computed: {
+      },
       filterAnimals() {
-        const filteredAnimals = store.animals.filter(animal => {
+        const filtered = store.animals.filter(animal => {
+          console.log("i work")
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
         })
-        this.searchedAnimals = filteredAnimals
-      }
+        console.log(filtered, "filtered")
+        this.searchedAnimals = filtered
+      } 
     }
   }
 </script>
@@ -61,9 +61,11 @@ export default {
       </div>
     </section>
     <section class="search-bar-div">
-      <input v-model="searchPhrase"
+      <input 
+        v-model="this.searchPhrase"
+        @keyup="filterAnimals()"
         type="text" 
-        placeholder="Search by name" name="animal" 
+        placeholder="Search by name" 
         class="search-bar" 
       />
     </section>
@@ -74,7 +76,7 @@ export default {
     </div>
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading">Loading...</h2>
-      <AnimalCardsSection v-if="this.searchedAnimals.length > 0" :animals="this.searchedAnimals" />
+      <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>
