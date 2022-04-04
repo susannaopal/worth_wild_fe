@@ -32,6 +32,7 @@ export default {
           store.error = '';
         }
       },
+      
       filterAnimals() {
         const filtered = store.animals.filter(animal => {
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
