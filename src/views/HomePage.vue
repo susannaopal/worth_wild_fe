@@ -15,10 +15,12 @@ export default {
         store,
         searchPhrase: '',
         searchedAnimals: [],
+        animalOfDay: {}
       }
     },
     created() {
-      this.getAnimals()  
+      this.getAnimals()
+      this.fetchAnimalOfDay()  
     },
     methods: {
       async getAnimals() {
@@ -38,6 +40,20 @@ export default {
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
         })
         this.searchedAnimals = filtered
+      },
+     async fetchAnimalOfDay() {
+       const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day');
+        if (!res.ok) {
+          store.error = res.statusText
+        } else {
+          const data = await res.json();
+          this.animalOfDay = data.attributes;
+          store.animalLoading = false;
+          store.error = '';
+        }
+      },
+      getAnimalOfDay() {
+        
       } 
     }
   }
@@ -47,13 +63,13 @@ export default {
   <body>
     <NavBar />
     <section class="feature-info">
-      <div class="feature-info-div">
+      <div @click="getAnimalOfDay()" class="feature-info-div">
         <h3>Animal of the Day</h3>
         <img 
-          src="../assets/The-Red-Wolf.png" alt="animal of the day" 
+          :src="animalOfDay.imageUrl" alt="animal of the day" 
           class="animal-of-day-img"
         />
-        <h2>Red Wolf</h2>
+        <h2>{{animalOfDay.common_name}}</h2>
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
