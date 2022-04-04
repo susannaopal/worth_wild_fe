@@ -43,6 +43,7 @@
   <body>
     <NavBar />
     <section class="animal-details">
+      <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <div class="animal-picture-div">
         <div class="scientific-class-div">
           <h2 v-if="store.animalDetails.common_name" class="name">{{ store.animalDetails.common_name.toUpperCase() }}</h2>
