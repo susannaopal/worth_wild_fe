@@ -55,9 +55,9 @@
     <section class="user-favorite-animals-sec">
       <AnimalCard 
         v-for="(animal) in store.favorites"
-        :commonName="animal.commonName"
+        :commonName="animal.common_name"
         :scientificName="animal.scientific_name"
-        :gRankReasons="animal.pop_size"
+        :gRankReasons="animal.pop_size  "
         :id="animal.element_code"
         :key="animal.element_code"
       />

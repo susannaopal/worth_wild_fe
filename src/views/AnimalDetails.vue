@@ -31,9 +31,8 @@
           headers: {'Content-Type': 'application/json'}
         })
           .then(response => response.json())
-          .then(data => store.favorites.push(data.data.attributes.animals))
-          .then(data => console.log(data.data.attributes.animals))
-          .catch(error => console.log(error))
+          .then(data => store.favorites = data.data.attributes.animals)
+          .catch(err => store.error = err)
       }     
     }
   }
