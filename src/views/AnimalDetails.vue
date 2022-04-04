@@ -10,11 +10,18 @@
       }
     },
     methods: {
-        removeTags(str) {
-        return str.replace( /(<([^>]+)>)/ig, '');
+      removeTags(str) {
+        const stringCheck = /<\/?[a-z][\s\S]*>/i.test(str)
+
+        if(stringCheck) {
+          return str.replace(/(<([^>]+)>)/ig, '');
+        }else {
+          return str;
+        }
       },
       postFavoriteAnimal() {
         const favAnimal = {user_id: store.user.id, animal_id: store.animalDetails.id}
+
         return fetch('https://secure-island-06435.herokuapp.com/api/v1/users', {
           method: 'POST',
           body: JSON.stringify(favAnimal),
@@ -51,7 +58,7 @@
       </section>
     </section>
     <div class="bottom-btns">
-      <button v-if="store.isLoggedIn" @click="postFavoriteAnimal" class="landing-btns">Favorite</button>
+      <button v-if="store.isLoggedIn" @click="postFavoriteAnimal()" class="landing-btns">Favorite</button>
       <RouterLink to="/main" class="landing-btns">Back</RouterLink>
     </div>
   </body>
@@ -69,12 +76,18 @@
 
   .animal-picture-div {
     height: 300px;
-    width: fit-content;
+    border-top-left-radius: 50px;
+    background-repeat: no-repeat;
   }
   
-  .name {
+  .name,
+  .status {
     z-index: 1;
+    background-color: #bccf8f;
+    width:fit-content;
+    padding: 15px 5px 5px 15px;
   }
+
 
   .bottom-btns {
     display: flex;
