@@ -14,7 +14,7 @@
           store.error = res.statusText
         } else {
           const data = await res.json();
-          store.animalDetails = data.attributes;
+          store.animalDetails = data;
           store.error = '';
           router.push('/details')
         }
@@ -22,7 +22,6 @@
     }
   }
 </script>
-
 
 <template>
   <div @click="fetchAnimalDetails(commonName, id)" class="card-div">
