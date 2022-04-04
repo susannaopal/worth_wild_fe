@@ -2,12 +2,16 @@
   import { RouterLink } from "vue-router";
   import NavBar from '../components/NavBar.vue';
   import { store } from "../store.js"
+  import AnimalCard from '../components/AnimalCard.vue'
 
   export default {
     data () {
       return {
         store
       }
+    },
+    created() {
+      console.log(store.favorites)
     },
     methods: {
       capitalizeName(string) {
@@ -16,7 +20,22 @@
           return word.charAt(0).toUpperCase() + word.slice(1)
         })
         return capitalizedWords.join(' ')
-      }
+      },
+
+      // renderFavorites() {
+      //   return store.favorites.map(animal => {
+      //     console.log(animal)
+      //     return (
+      //       <AnimalCard 
+      //         commonName = {animal.common_name}
+      //         scientificName= {animal.scientific_name}
+      //         gRankReasons= {animal.pop_size}
+      //         id= {animal.element_code}
+      //         key= {animal.element_code}
+      //       />
+      //     )
+      //   })
+      // }
     }
   }
 </script>
@@ -34,11 +53,14 @@
       <h3 class="label">Population Size</h3>
     </div>
     <section class="user-favorite-animals-sec">
-      <div class="animal-card">
-        <p class="animal-details-p">{{ this.capitalizeName(store.user.attributes.animals[0].common_name) }}</p>
-        <p class="animal-details-p">{{ this.capitalizeName(store.user.attributes.animals[0].scientific_name) }}</p>
-        <p class="animal-details-p">{{ this.capitalizeName(store.user.attributes.animals[0].pop_size) }}</p>
-      </div>
+      <AnimalCard 
+        v-for="(animal) in store.favorites"
+        :commonName="animal.common_name"
+        :scientificName="animal.scientific_name"
+        :gRankReasons="animal.pop_size  "
+        :id="animal.element_code"
+        :key="animal.element_code"
+      />
     </section>
   </body>
 </template>

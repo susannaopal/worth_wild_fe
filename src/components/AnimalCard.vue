@@ -4,16 +4,17 @@
 <script>
   import router from "../router/index";
   import { store } from '../store.js';
+
   export default {
     props: ['commonName', 'scientificName', 'gRankReasons', 'id'],
     methods: {
       async fetchAnimalDetails(name, id) {
-      const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
+        const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
         if (!res.ok){
           store.error = res.statusText
         } else {
           const data = await res.json();
-          store.animalDetails = data.attributes;
+          store.animalDetails = data;
           store.error = '';
           router.push('/details')
         }
@@ -21,7 +22,6 @@
     }
   }
 </script>
-
 
 <template>
   <div @click="fetchAnimalDetails(commonName, id)" class="card-div">
@@ -37,7 +37,7 @@
 <style>
   .card-div {
     width: 95%;
-    margin-left: 70px;
+    margin-left: 300px;
   }
 
   .card-div:hover {
