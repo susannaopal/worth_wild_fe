@@ -13,7 +13,8 @@ export default {
       username: "",
       password: "",
       loginError: false,
-      store
+      store,
+      showModal: false
     };
   },
   components: {
@@ -62,6 +63,7 @@ export default {
     <div class="button-div">
       <RouterLink to="/" class="login-btn">Back</RouterLink>
       <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+      <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Create Account</button>
     </div>
   </form>
   <RouterView />

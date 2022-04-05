@@ -42,16 +42,16 @@ export default {
         })
         this.searchedAnimals = filtered
       },
-     async fetchAnimalOfDay() {
-       const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day');
-        if (!res.ok) {
-          store.error = res.statusText
-        } else {
-          const data = await res.json();
-          store.animalOfDay = data.data.attributes;
-          store.animalLoading = false;
-          store.error = '';
-        }
+      async fetchAnimalOfDay() {
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day');
+          if (!res.ok) {
+            store.error = res.statusText
+          } else {
+            const data = await res.json();
+            store.animalOfDay = data.data.attributes;
+            store.animalLoading = false;
+            store.error = '';
+          }
       },
       async getAnimalOfDay(name, id) {
         const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
