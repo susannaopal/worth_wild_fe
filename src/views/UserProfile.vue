@@ -1,28 +1,69 @@
 <script>
   import { RouterLink } from "vue-router";
   import NavBar from '../components/NavBar.vue';
+  import { store } from "../store.js"
+  import AnimalCard from '../components/AnimalCard.vue'
+
+  export default {
+    data () {
+      return {
+        store
+      }
+    },
+    created() {
+      console.log(store.favorites)
+    },
+    methods: {
+      capitalizeName(string) {
+        const splitString = string.split(' ')
+        const capitalizedWords = splitString.map( word =>  {
+          return word.charAt(0).toUpperCase() + word.slice(1)
+        })
+        return capitalizedWords.join(' ')
+      },
+
+      // renderFavorites() {
+      //   return store.favorites.map(animal => {
+      //     console.log(animal)
+      //     return (
+      //       <AnimalCard 
+      //         commonName = {animal.common_name}
+      //         scientificName= {animal.scientific_name}
+      //         gRankReasons= {animal.pop_size}
+      //         id= {animal.element_code}
+      //         key= {animal.element_code}
+      //       />
+      //     )
+      //   })
+      // }
+    }
+  }
 </script>
 
 <template>
   <body>
     <NavBar />
     <section class="user-info-section">
-      <h3>Welcome, Barack Obama</h3>
+      <h3 v-if="store">Welcome {{ store.user.attributes.first_name }}!</h3>
     </section>
     <h2>Favorites:</h2>
-    <section class="user-favorite-animals">
-      <div class="animal-card">Animal here</div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
-      <div class="animal-card"></div>
+    <div class="favs-labels-container">
+      <h3 class="label">Common Name</h3>
+      <h3 class="label">Scientific Name</h3>
+      <h3 class="label">Population Size</h3>
+    </div>
+    <section class="user-favorite-animals-sec">
+      <AnimalCard 
+        v-for="(animal) in store.favorites"
+        :commonName="animal.common_name"
+        :scientificName="animal.scientific_name"
+        :gRankReasons="animal.pop_size  "
+        :id="animal.element_code"
+        :key="animal.element_code"
+      />
     </section>
   </body>
 </template>
-
 
 <style>
   .user-info-section {
@@ -30,7 +71,7 @@
     justify-content: center;
     align-items: center;
     height: 10vh;
-    margin-top: 15px;
+    margin: 30px 0px;
     padding: 20px;
     border: 3px solid #526625;
     border-radius: 25px;
@@ -39,32 +80,42 @@
     font-size: 30px;
   }
 
-  .user-favorite-animals {
+  .favs-labels-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .user-favorite-animals-sec {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     width: 95vw;
+    height: 75vh;
+    margin: 15px 0px;
     background-color: #E9E7DD;
     border: 3px solid #C8C097;
     border-radius: 35px;
   }
 
-.animal-card {
-   display: flex;
-  justify-content: center;
-  height: 300px;
-  width: 375px;
-  background-color:#556D1D;
-  border-radius: 25px;
-  color: #556D1D;
-  /* border: 3px solid #3b4b13; */
-  border: 3px solid #526625;
-  margin: 35px;
-}
+  .animal-card {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 22%;
+    height: 100px;
+    width: 95%;
+    border-bottom: 3px solid #C8C097;
+  }
 
-h2 {
-  font-size: 35px;
-  color: #432A0B;
-}
+  .animal-details-p {
+    margin-left: 70px;
+  }
+
+  h2 {
+    font-size: 35px;
+    color: #432A0B;
+    margin: 0;
+  }
 </style>

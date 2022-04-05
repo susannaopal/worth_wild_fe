@@ -27,9 +27,10 @@ const router = createRouter({
       component: LoginPage,
     },
     {
-      path: "/guest",
-      name: "guest",
+      path: "/main",
+      name: "HomePage",
       component: HomePage,
+      props: true,
     },
     {
       path: "/user-profile",
