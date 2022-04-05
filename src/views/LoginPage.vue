@@ -4,6 +4,7 @@ import router from "../router";
 import HomePage from "./HomePage.vue";
 import UserProfile from "./UserProfile.vue";
 import { store } from "../store.js";
+import NewUserModal from "../components/NewUserModal.vue"
 </script>
 
 <script>
@@ -66,6 +67,11 @@ export default {
       <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Create Account</button>
     </div>
   </form>
+  <Teleport to="body">
+    <NewUserModal :show="showModal" @close="showModal = false">
+      <template></template>
+    </NewUserModal>
+  </Teleport>
   <RouterView />
 </template>
 
