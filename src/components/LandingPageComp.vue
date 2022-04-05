@@ -20,7 +20,7 @@ import { store } from "../store.js";
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">
-      Worth Wild's mission is to bring awareness to North American wild life species that are critically endangered and underrepresented. They need our help before it is too late and they are lost to us forever. To work towards this mission, we created an application that allows users to view local animals and learn more about them; including their endangered status.
+      Worth Wild's mission is to bring awareness to North American wildlife, flora, and fauna that are critically endangered and underrepresented. To work towards this mission, we created an application that allows users to view local plants and animals and learn more about them. 
     </p>
   </body>
 </template>
