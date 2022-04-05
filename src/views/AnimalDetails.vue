@@ -5,7 +5,6 @@
   export default {
     data() {
       return {
-        animal: {},
         store
       }
     },
@@ -42,6 +41,7 @@
   <body>
     <NavBar />
     <section class="animal-details">
+      <h2 v-if="!store.animalDetails" >Your animal is on it's way...</h2>
       <div class="animal-picture-div">
         <div class="scientific-class-div">
           <h2 v-if="store.animalDetails.common_name" class="name">{{ store.animalDetails.common_name.toUpperCase() }}</h2>

@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 <script setup>
 import { RouterLink } from "vue-router";
+import router from '../router/index'
 import NavBar from "@/components/NavBar.vue";
 import { store } from "../store.js";
 import AnimalCardsSection from '@/components/AnimalCardsSection.vue';
@@ -14,11 +15,13 @@ export default {
       return {
         store,
         searchPhrase: '',
-        searchedAnimals: [],
+        searchedAnimals: []
       }
     },
     created() {
-      this.getAnimals()  
+      this.getAnimals()
+      this.fetchAnimalOfDay()
+      store.animalDetails = {}  
     },
     methods: {
       async getAnimals() {
@@ -38,7 +41,32 @@ export default {
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
         })
         this.searchedAnimals = filtered
-      } 
+      },
+      async fetchAnimalOfDay() {
+        const res = await fetch('https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day');
+          if (!res.ok) {
+            store.error = res.statusText
+          } else {
+            const data = await res.json();
+            store.animalOfDay = data.data.attributes;
+            store.animalLoading = false;
+            store.error = '';
+          }
+      },
+      async getAnimalOfDay(name, id) {
+        const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
+        if (!res.ok){
+          store.error = res.statusText
+        } else {
+          const data = await res.json();
+          store.animalDetails = data;
+          store.error = '';
+          setTimeout(() => {
+            router.push('/details')
+          }, 1000);
+        }
+            
+      }   
     }
   }
 </script>
@@ -47,13 +75,13 @@ export default {
   <body>
     <NavBar />
     <section class="feature-info">
-      <div class="feature-info-div">
+      <div @click="getAnimalOfDay(store.animalOfDay.common_name, store.animalOfDay.element_code)" class="feature-info-div">
         <h3>Animal of the Day</h3>
         <img 
-          src="../assets/The-Red-Wolf.png" alt="animal of the day" 
+          :src="store.animalOfDay.imageUrl" alt="animal of the day" 
           class="animal-of-day-img"
         />
-        <h2>Red Wolf</h2>
+        <h2>{{store.animalOfDay.common_name}}</h2>
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
@@ -81,8 +109,8 @@ export default {
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <h2 v-else-if="store.error">{{ store.error }}</h2>
-      <h2 v-if="!searchedAnimals.length && searchPhrase">No animals found...</h2>
-      <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
+      <h2 v-if="!searchedAnimals.length && this.searchPhrase">No animals found...</h2>
+      <AnimalCardsSection v-if="this.searchPhrase" :animals="this.searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>
@@ -106,6 +134,7 @@ export default {
     border: 3px solid #C8C097;
     border-radius: 50px;
     margin: 15px 30px;
+    cursor: pointer;
   }
 
   .search-bar-div {
