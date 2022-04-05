@@ -5,6 +5,7 @@ export const store = reactive({
   favorites: [],
   animals: [],
   animalDetails: {},
+  animalOfDay: {},
   animalLoading: true,
   isLoggedIn: false,
   error: '',

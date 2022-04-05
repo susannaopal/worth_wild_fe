@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 <script setup>
 import { RouterLink } from "vue-router";
+import router from '../router/index'
 import NavBar from "@/components/NavBar.vue";
 import { store } from "../store.js";
 import AnimalCardsSection from '@/components/AnimalCardsSection.vue';
@@ -14,8 +15,7 @@ export default {
       return {
         store,
         searchPhrase: '',
-        searchedAnimals: [],
-        animalOfDay: {}
+        searchedAnimals: []
       }
     },
     created() {
@@ -47,14 +47,24 @@ export default {
           store.error = res.statusText
         } else {
           const data = await res.json();
-          this.animalOfDay = data.attributes;
+          store.animalOfDay = data.attributes;
           store.animalLoading = false;
           store.error = '';
         }
       },
-      getAnimalOfDay() {
-        
-      } 
+      async getAnimalOfDay(name, id) {
+        console.log(name, id)
+        console.log('store.animalOfDay', store.animalOfDay)
+        const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
+        if (!res.ok){
+          store.error = res.statusText
+        } else {
+          const data = await res.json();
+          store.animalDetails = data;
+          store.error = '';
+          router.push('/details')
+        }
+      }   
     }
   }
 </script>
@@ -63,13 +73,13 @@ export default {
   <body>
     <NavBar />
     <section class="feature-info">
-      <div @click="getAnimalOfDay()" class="feature-info-div">
+      <div @click="getAnimalOfDay(store.animalOfDay.common_name, store.animalOfDay.element_code)" class="feature-info-div">
         <h3>Animal of the Day</h3>
         <img 
-          :src="animalOfDay.imageUrl" alt="animal of the day" 
+          :src="store.animalOfDay.imageUrl" alt="animal of the day" 
           class="animal-of-day-img"
         />
-        <h2>{{animalOfDay.common_name}}</h2>
+        <h2>{{store.animalOfDay.common_name}}</h2>
       </div>
       <div class="feature-info-div">
         <h3>Featured Organization</h3>
@@ -122,6 +132,7 @@ export default {
     border: 3px solid #C8C097;
     border-radius: 50px;
     margin: 15px 30px;
+    cursor: pointer;
   }
 
   .search-bar-div {
