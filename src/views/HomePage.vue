@@ -20,7 +20,8 @@ export default {
     },
     created() {
       this.getAnimals()
-      this.fetchAnimalOfDay()  
+      this.fetchAnimalOfDay()
+      store.animalDetails = {}  
     },
     methods: {
       async getAnimals() {
@@ -47,14 +48,12 @@ export default {
           store.error = res.statusText
         } else {
           const data = await res.json();
-          store.animalOfDay = data.attributes;
+          store.animalOfDay = data.data.attributes;
           store.animalLoading = false;
           store.error = '';
         }
       },
       async getAnimalOfDay(name, id) {
-        console.log(name, id)
-        console.log('store.animalOfDay', store.animalOfDay)
         const res = await fetch(`https://secure-island-06435.herokuapp.com/api/v1/animal?common_name=${name}&element_code=${id}`)
         if (!res.ok){
           store.error = res.statusText
@@ -62,8 +61,11 @@ export default {
           const data = await res.json();
           store.animalDetails = data;
           store.error = '';
-          router.push('/details')
+          setTimeout(() => {
+            router.push('/details')
+          }, 1000);
         }
+            
       }   
     }
   }
@@ -107,8 +109,8 @@ export default {
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <h2 v-else-if="store.error">{{ store.error }}</h2>
-      <h2 v-if="!searchedAnimals.length && searchPhrase">No animals found...</h2>
-      <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
+      <h2 v-if="!searchedAnimals.length && this.searchPhrase">No animals found...</h2>
+      <AnimalCardsSection v-if="this.searchPhrase" :animals="this.searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>
