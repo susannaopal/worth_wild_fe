@@ -11,11 +11,13 @@ import { store } from "../store.js"
         email: "",
         username: "",
         successMessage: "",
+        isActive: false,
         store
       }
     },
     methods: {
       postNewUser() {
+        console.log("im working")
         const newUser = {
           username: this.username,
           email: this.email,
@@ -43,13 +45,41 @@ import { store } from "../store.js"
         <div class="modal-container">
           <h2 v-if="this.successMessage">Thank you {{this.successMessage}}. Please sign in.</h2>
           <div v-else class="modal-body">
-            <input type="text" placeholder="First Name" v-model="firstName"/>
-            <input type="text" placeholder="Last Name" v-model="lastName" />
-            <input type="text" placeholder="Email" v-model="email" />
-            <input type="text" placeholder="Username" v-model="username" />
-            <input type="password" placeholder="Password"/>
+            <input 
+              type="text" 
+              placeholder="First Name" 
+              :value="firstName"
+              @input="e => firstName = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Last Name" 
+              :value="lastName"
+              @input="e => lastName = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Email" 
+              :value="email"
+              @input="e => email = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Username" 
+              :value="username"
+              @input="e => username = e.target.value" 
+            />
+            <input 
+              type="password" 
+              placeholder="Password"
+            />
             <div class="modal-btn">
-              <button class="login-btn" @click.prevent="this.postNewUser"   type="submit">Submit</button>
+              <button 
+                :disabled="!firstName && !lastName && !username && !email" 
+                class="login-btn" 
+                @click.prevent="this.postNewUser" 
+                @click="$emit('close')" 
+                type="submit">Submit</button>
               <button class="login-btn" @click="$emit('close')">Close</button>
             </div>
           </div>
@@ -60,6 +90,11 @@ import { store } from "../store.js"
 
 
 <style scoped>
+
+.login-btn:disabled {
+  background-color: #bebfc2;
+  color: #828385;
+}
 .modal-container {
   width: 30%;
   margin: 0px auto;

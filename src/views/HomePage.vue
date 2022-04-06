@@ -36,8 +36,9 @@ export default {
         }
       },
       filterAnimals() {
+        const self = this
         const filtered = store.animals.filter(animal => {
-          return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
+          return animal.attributes.common_name.toLowerCase().includes(self.searchPhrase.toLowerCase())
         })
         this.searchedAnimals = filtered
       },
@@ -93,8 +94,9 @@ export default {
     </section>
     <section class="search-bar-div">
       <input 
-        v-model="searchPhrase"
-        @keyup.prevent="filterAnimals()"
+        :value="searchPhrase"
+        @input="e => searchPhrase = e.target.value"
+        @keyup="filterAnimals()"
         type="text" 
         placeholder="Search by name" 
         class="search-bar" 
@@ -109,7 +111,7 @@ export default {
       <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <h2 v-else-if="store.error">{{ store.error }}</h2>
       <h2 v-if="!searchedAnimals.length && searchPhrase">No animals found...</h2>
-      <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
+      <AnimalCardsSection v-if="searchPhrase" :animals="searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>

@@ -37,12 +37,13 @@ export default {
         }
     },
     checkForm() {
-      if (!this.username || !this.password) {
-        this.loginError = true;
+      const self = this
+      if (!self.username || !self.password) {
+        self.loginError = true;
       } else {
-        this.loginError = false;
+        self.loginError = false;
         store.isLoggedIn = true
-        this.getUser();
+        self.getUser();
       }
     },
   },
@@ -52,25 +53,37 @@ export default {
 <template>
   <form>
     <div class="input-div">
-      <label for="username">Username:</label>
-      <input id="username" type="text" name="username" required v-model="username" />
+      <label>Username:</label>
+      <input 
+        type="text" 
+        name="username" 
+        required 
+        :value="username" 
+        @input="e => username = e.target.value" 
+      />
     </div>
     <div class="input-div">
-      <label for="password">Password:</label>
-      <input if="password" type="password" name="password" required v-model="password" />
+      <label>Password:</label>
+      <input 
+        type="password" 
+        name="password" 
+        required 
+        :value="password" 
+        @input="e => password = e.target.value" 
+      />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
     <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
     <div class="button-div">
       <div class="login-submit-div">
         <button @click="$router.push('/')" class="login-btn">Back</button>
-        <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+        <button @click.prevent="checkForm()" class="login-btn" type="submit">Login</button>
       </div>
-      <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Register</button>
+      <button class="login-btn" @click.prevent="showModal = !showModal">Register</button>
     </div>
   </form>
   <Teleport to="body">
-    <NewUserModal :show="showModal" @close="this.showModal = false">
+    <NewUserModal :show="showModal" @close="showModal = false">
       <template></template>
     </NewUserModal>
   </Teleport>
@@ -128,7 +141,7 @@ input {
   cursor: pointer;
 }
 
-.login-btn:hover {
+.login-btn:hover:enabled {
   transition: 0.2s;
   transform: scale(1.2);
   background-color: #556d1d;
