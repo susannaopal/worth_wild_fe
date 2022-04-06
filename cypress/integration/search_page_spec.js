@@ -17,7 +17,7 @@ describe('Search Page User Flow', () => {
   });
 
   it('should see an animal or vegetation of the day', () => {
-    
+    cy.get('feature-info-div')
   })
 
 });
