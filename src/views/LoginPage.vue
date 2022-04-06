@@ -62,8 +62,10 @@ export default {
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
     <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
     <div class="button-div">
-      <RouterLink to="/" class="login-btn">Back</RouterLink>
-      <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+      <div class="login-submit-div">
+        <RouterLink to="/" class="login-btn">Back</RouterLink>
+        <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+      </div>
       <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Register</button>
     </div>
   </form>
@@ -133,9 +135,18 @@ input {
   color: #e9e7dd;
 }
 
+.login-submit-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
 .button-div {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 
