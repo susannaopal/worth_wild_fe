@@ -141,7 +141,7 @@ input {
   cursor: pointer;
 }
 
-.login-btn:hover {
+.login-btn:hover:enabled {
   transition: 0.2s;
   transform: scale(1.2);
   background-color: #556d1d;

@@ -11,18 +11,19 @@ import { store } from "../store.js"
         email: "",
         username: "",
         successMessage: "",
+        isActive: false,
         store
       }
     },
     methods: {
       postNewUser() {
+        console.log("im working")
         const newUser = {
           username: this.username,
           email: this.email,
           first_name: this.firstName,
           last_name: this.lastName
         }
-        console.log('newUser--', newUser)
         fetch('https://secure-island-06435.herokuapp.com/api/v1/users', {
           method: 'POST',
           body: JSON.stringify(newUser),
@@ -73,7 +74,12 @@ import { store } from "../store.js"
               placeholder="Password"
             />
             <div class="modal-btn">
-              <button class="login-btn" @click.prevent="this.postNewUser"   type="submit">Submit</button>
+              <button 
+                :disabled="!firstName && !lastName && !username && !email" 
+                class="login-btn" 
+                @click.prevent="this.postNewUser" 
+                @click="$emit('close')" 
+                type="submit">Submit</button>
               <button class="login-btn" @click="$emit('close')">Close</button>
             </div>
           </div>
@@ -84,6 +90,11 @@ import { store } from "../store.js"
 
 
 <style scoped>
+
+.login-btn:disabled {
+  background-color: #bebfc2;
+  color: #828385;
+}
 .modal-container {
   width: 30%;
   margin: 0px auto;
