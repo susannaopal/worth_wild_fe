@@ -17,24 +17,31 @@ describe('Login Page User Flow', () => {
     cy.get('form')
       .get(':nth-child(1) > label')
       .contains('Username')
-      .type('scarey')
+      .type('bpeterson')
       .should('be.visible')
       .get(':nth-child(2) > label')
       .contains('Password')
       .should('be.visible')
   });
 
-  // it('should see a back button', () => {
-  //   cy.get('a.login-btn')
-  //     .contains('Back')
-  //     .should('be.visible')
-  //     .click()
-  // });
+  it('should see a back button', () => {
+    cy.get('.login-submit-div > :nth-child(1)')
+      .contains('Back')
+      .should('be.visible')
+      .click()
+  });
 
-    //  it('should be able to click a button to register', () => {
-    //   cy.get('.button-div > :nth-child(3)')
-    //   .contains('Register')
-    //   .should('be.visible')
-    //   .click()
-    // });
+  it('should be able to see a login button', () => {
+    cy.get('[type="submit"]')
+      .contains('Login')
+      .should('be.visible')
+      .click()
+  })
+
+     it('should be able to click a button to register', () => {
+      cy.get('.button-div > :nth-child(2)')
+      .contains('Register')
+      .should('be.visible')
+      .click()
+    });
 });
