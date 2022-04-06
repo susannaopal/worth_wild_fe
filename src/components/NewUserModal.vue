@@ -22,7 +22,6 @@ import { store } from "../store.js"
           first_name: this.firstName,
           last_name: this.lastName
         }
-        console.log('newUser--', newUser)
         fetch('https://secure-island-06435.herokuapp.com/api/v1/users', {
           method: 'POST',
           body: JSON.stringify(newUser),
