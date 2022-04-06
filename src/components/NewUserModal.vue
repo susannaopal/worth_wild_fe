@@ -65,7 +65,7 @@ import { store } from "../store.js"
   width: 30%;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: #3b4b13;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   border-radius: 30px;
@@ -73,6 +73,11 @@ import { store } from "../store.js"
 }
 
 .modal-body {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
   margin: 20px 0;
 }
 
@@ -104,6 +109,7 @@ import { store } from "../store.js"
 .modal-btn {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
   margin-top: 15px;
 }
 </style>
