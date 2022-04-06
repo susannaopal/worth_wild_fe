@@ -37,12 +37,13 @@ export default {
         }
     },
     checkForm() {
-      if (!this.username || !this.password) {
-        this.loginError = true;
+      const self = this
+      if (!self.username || !self.password) {
+        self.loginError = true;
       } else {
-        this.loginError = false;
+        self.loginError = false;
         store.isLoggedIn = true
-        this.getUser();
+        self.getUser();
       }
     },
   },
