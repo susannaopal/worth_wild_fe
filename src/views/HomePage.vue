@@ -36,8 +36,9 @@ export default {
         }
       },
       filterAnimals() {
+        const self = this
         const filtered = store.animals.filter(animal => {
-          return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
+          return animal.attributes.common_name.toLowerCase().includes(self.searchPhrase.toLowerCase())
         })
         this.searchedAnimals = filtered
       },
