@@ -83,6 +83,7 @@
 
   .animal-pic {
     width: fit-content;
+    border-radius: 25px;
   }
 
   .animal-picture-div {
