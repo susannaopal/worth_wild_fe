@@ -68,7 +68,7 @@ export default {
     </div>
   </form>
   <Teleport to="body">
-    <NewUserModal :show="showModal" @close="showModal = false">
+    <NewUserModal :show="showModal" @close="this.showModal = false">
       <template></template>
     </NewUserModal>
   </Teleport>

@@ -49,7 +49,10 @@ import { store } from "../store.js"
             <input type="text" placeholder="Email" v-model="email" />
             <input type="text" placeholder="Username" v-model="username" />
             <input type="password" placeholder="Password"/>
-            <button @click.prevent="this.postNewUser"  type="submit">Submit</button>
+            <div class="modal-btn">
+              <button class="login-btn" @click.prevent="this.postNewUser"   type="submit">Submit</button>
+              <button class="login-btn" @click="$emit('close')">Close</button>
+            </div>
           </div>
         </div>
       </form>
@@ -96,5 +99,11 @@ import { store } from "../store.js"
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
 }
 </style>
