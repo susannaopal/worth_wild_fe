@@ -44,11 +44,34 @@ import { store } from "../store.js"
         <div class="modal-container">
           <h2 v-if="this.successMessage">Thank you {{this.successMessage}}. Please sign in.</h2>
           <div v-else class="modal-body">
-            <input type="text" placeholder="First Name" v-model="firstName"/>
-            <input type="text" placeholder="Last Name" v-model="lastName" />
-            <input type="text" placeholder="Email" v-model="email" />
-            <input type="text" placeholder="Username" v-model="username" />
-            <input type="password" placeholder="Password"/>
+            <input 
+              type="text" 
+              placeholder="First Name" 
+              :value="firstName"
+              @input="e => firstName = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Last Name" 
+              :value="lastName"
+              @input="e => lastName = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Email" 
+              :value="email"
+              @input="e => email = e.target.value"
+            />
+            <input 
+              type="text" 
+              placeholder="Username" 
+              :value="username"
+              @input="e => username = e.target.value" 
+            />
+            <input 
+              type="password" 
+              placeholder="Password"
+            />
             <div class="modal-btn">
               <button class="login-btn" @click.prevent="this.postNewUser"   type="submit">Submit</button>
               <button class="login-btn" @click="$emit('close')">Close</button>

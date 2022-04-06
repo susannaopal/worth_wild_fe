@@ -54,11 +54,23 @@ export default {
   <form>
     <div class="input-div">
       <label>Username:</label>
-      <input type="text" name="username" required v-model="username" />
+      <input 
+        type="text" 
+        name="username" 
+        required 
+        :value="username" 
+        @input="e => username = e.target.value" 
+      />
     </div>
     <div class="input-div">
       <label>Password:</label>
-      <input type="password" name="password" required v-model="password" />
+      <input 
+        type="password" 
+        name="password" 
+        required 
+        :value="password" 
+        @input="e => password = e.target.value" 
+      />
     </div>
     <p v-if="loginError" class="login-error-msg">Please fill out both fields in order to login!</p>
     <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
