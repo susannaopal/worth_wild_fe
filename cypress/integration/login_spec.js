@@ -1,4 +1,4 @@
-describe('Landing Page User Flow', () => {
+describe('Login Page User Flow', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5050/login');
   });
@@ -29,10 +29,10 @@ describe('Landing Page User Flow', () => {
       .should('be.visible')
   });
 
-     it('should be able to register by clicking a button', () => {
+     it('should be able to click a button to register', () => {
       cy.get('.button-div > :nth-child(3)')
       .contains('Register')
       .should('be.visible')
       .click()
-    })
+    });
 });
