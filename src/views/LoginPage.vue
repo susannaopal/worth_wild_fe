@@ -79,11 +79,11 @@ export default {
         <button @click="$router.push('/')" class="login-btn">Back</button>
         <button @click.prevent="checkForm()" class="login-btn" type="submit">Login</button>
       </div>
-      <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Register</button>
+      <button class="login-btn" @click.prevent="showModal = !showModal">Register</button>
     </div>
   </form>
   <Teleport to="body">
-    <NewUserModal :show="showModal" @close="this.showModal = false">
+    <NewUserModal :show="showModal" @close="showModal = false">
       <template></template>
     </NewUserModal>
   </Teleport>
