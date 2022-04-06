@@ -20,7 +20,7 @@ import { store } from "../store.js";
       <RouterLink to="/login" class="landing-btns">Log In</RouterLink>
     </div>
     <p class="mission-statement">
-      Worth Wild's mission is to bring awareness to North American wild life species that are critically endangered and underrepresented. They need our help before it is too late and they are lost to us forever. To work towards this mission, we created an application that allows users to view local animals and learn more about them; including their endangered status.
+      Worth Wild's mission is to bring awareness to North American wild life animal and plant species that are critically endangered and underrepresented. They need our help before it is too late and they are lost to us forever. To work towards this mission, we created an application that allows users to view local animals and plants to learn more about them; including their endangered status.
     </p>
   </body>
 </template>
@@ -63,8 +63,11 @@ a {
 }
 
 .landing-btns {
-  background-color: #556d1d;
-  color: #e9e7dd;
+  background-color: #e9e7dd;
+  color: #432a0b;
+  border: 3px solid #c8c097;
+  /* background-color: #556d1d;
+  color: #e9e7dd; */
   box-shadow: 0px 5px #334111;
   border-radius: 50px;
   height: 5vh;
@@ -79,7 +82,9 @@ a {
 .landing-btns:hover {
   transition: 0.2s;
   transform: scale(1.1);
-  background-color: #e9e7dd;
-  color: #556d1d;
+  background-color: #556d1d;
+  color: #e9e7dd;
+  /* background-color: #e9e7dd;
+  color: #556d1d; */
 }
 </style>

@@ -178,6 +178,7 @@ export default {
     border-radius: 35px;
     width: 95vw;
     padding-right: 25px;
+    padding-left: 25px;
   }
 
   .wwf-logo, a {
