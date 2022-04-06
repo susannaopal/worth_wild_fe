@@ -17,6 +17,7 @@ describe('Login Page User Flow', () => {
     cy.get('form')
       .get(':nth-child(1) > label')
       .contains('Username')
+      .type('scarey')
       .should('be.visible')
       .get(':nth-child(2) > label')
       .contains('Password')
@@ -27,6 +28,7 @@ describe('Login Page User Flow', () => {
     cy.get('a.login-btn')
       .contains('Back')
       .should('be.visible')
+      .click()
   });
 
      it('should be able to click a button to register', () => {

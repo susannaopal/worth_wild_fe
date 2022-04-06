@@ -18,14 +18,12 @@ describe('Landing Page User Flow', () => {
         cy.get('body')
           .contains('Guest')
           .should('be.visible')
-          .click()
       });
 
       it('should see a button for a user to login',() => {
         cy.get('body')
           .contains('Log In')
           .should('be.visible')
-          .click()
       });
 
     it('should see a mission statement', () => {
