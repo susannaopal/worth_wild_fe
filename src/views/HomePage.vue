@@ -109,8 +109,8 @@ export default {
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <h2 v-else-if="store.error">{{ store.error }}</h2>
-      <h2 v-if="!searchedAnimals.length && this.searchPhrase">No animals found...</h2>
-      <AnimalCardsSection v-if="this.searchPhrase" :animals="searchedAnimals" />
+      <h2 v-if="!searchedAnimals.length && searchPhrase">No animals found...</h2>
+      <AnimalCardsSection v-if="searchPhrase" :animals="searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>

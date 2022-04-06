@@ -65,7 +65,7 @@ export default {
     <div class="button-div">
       <div class="login-submit-div">
         <button @click="$router.push('/')" class="login-btn">Back</button>
-        <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
+        <button @click.prevent="checkForm()" class="login-btn" type="submit">Login</button>
       </div>
       <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Register</button>
     </div>
