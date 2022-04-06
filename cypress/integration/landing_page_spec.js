@@ -29,7 +29,7 @@ describe('Landing Page User Flow', () => {
     it('should see a mission statement', () => {
        cy.get('main > body')
           .get('p')
-          .contains('The mission of Worth Wild is to bring awareness to North American wildlife, flora, and fauna that are critically endangered and underrepresented. To work towards this mission, we created an application that allows users to view local plants and animals and learn more about them.')
+          .contains('Worth Wild\'s mission is to bring awareness to North American wild life animal and plant species that are critically endangered and underrepresented. They need our help before it is too late and they are lost to us forever. To work towards this mission, we created an application that allows users to view local animals and plants to learn more about them; including their endangered status.')
           .should('be.visible')
     });
 });

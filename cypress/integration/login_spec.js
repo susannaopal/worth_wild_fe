@@ -24,17 +24,17 @@ describe('Login Page User Flow', () => {
       .should('be.visible')
   });
 
-  it('should see a back button', () => {
-    cy.get('a.login-btn')
-      .contains('Back')
-      .should('be.visible')
-      .click()
-  });
+  // it('should see a back button', () => {
+  //   cy.get('a.login-btn')
+  //     .contains('Back')
+  //     .should('be.visible')
+  //     .click()
+  // });
 
-     it('should be able to click a button to register', () => {
-      cy.get('.button-div > :nth-child(3)')
-      .contains('Register')
-      .should('be.visible')
-      .click()
-    });
+    //  it('should be able to click a button to register', () => {
+    //   cy.get('.button-div > :nth-child(3)')
+    //   .contains('Register')
+    //   .should('be.visible')
+    //   .click()
+    // });
 });
