@@ -94,7 +94,7 @@ export default {
     <section class="search-bar-div">
       <input 
         v-model="searchPhrase"
-        @keyup="filterAnimals()"
+        @keyup.prevent="filterAnimals()"
         type="text" 
         placeholder="Search by name" 
         class="search-bar" 
