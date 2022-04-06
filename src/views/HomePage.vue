@@ -35,7 +35,6 @@ export default {
           store.error = '';
         }
       },
-      
       filterAnimals() {
         const filtered = store.animals.filter(animal => {
           return animal.attributes.common_name.toLowerCase().includes(this.searchPhrase.toLowerCase())
@@ -94,8 +93,8 @@ export default {
     </section>
     <section class="search-bar-div">
       <input 
-        v-model="this.searchPhrase"
-        @keyup="filterAnimals()"
+        v-model="searchPhrase"
+        @keyup.prevent="filterAnimals()"
         type="text" 
         placeholder="Search by name" 
         class="search-bar" 
@@ -109,8 +108,8 @@ export default {
     <section class="animal-cards-section">
       <h2 v-if="store.animalLoading && !store.error">Loading...</h2>
       <h2 v-else-if="store.error">{{ store.error }}</h2>
-      <h2 v-if="!searchedAnimals.length && this.searchPhrase">No animals found...</h2>
-      <AnimalCardsSection v-if="this.searchPhrase" :animals="this.searchedAnimals" />
+      <h2 v-if="!searchedAnimals.length && searchPhrase">No animals found...</h2>
+      <AnimalCardsSection v-if="searchPhrase" :animals="this.searchedAnimals" />
       <AnimalCardsSection v-else :animals="store.animals" />
     </section>
   </body>
@@ -179,6 +178,7 @@ export default {
     border-radius: 35px;
     width: 95vw;
     padding-right: 25px;
+    padding-left: 25px;
   }
 
   .wwf-logo, a {

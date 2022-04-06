@@ -48,7 +48,10 @@ import { store } from "../store.js"
             <input type="text" placeholder="Email" v-model="email" />
             <input type="text" placeholder="Username" v-model="username" />
             <input type="password" placeholder="Password"/>
-            <button @click.prevent="this.postNewUser"  type="submit">Submit</button>
+            <div class="modal-btn">
+              <button class="login-btn" @click.prevent="this.postNewUser"   type="submit">Submit</button>
+              <button class="login-btn" @click="$emit('close')">Close</button>
+            </div>
           </div>
         </div>
       </form>
@@ -61,7 +64,7 @@ import { store } from "../store.js"
   width: 30%;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: #3b4b13;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   border-radius: 30px;
@@ -69,6 +72,11 @@ import { store } from "../store.js"
 }
 
 .modal-body {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
   margin: 20px 0;
 }
 
@@ -95,5 +103,12 @@ import { store } from "../store.js"
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 15px;
 }
 </style>

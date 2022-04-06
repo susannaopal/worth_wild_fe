@@ -37,7 +37,7 @@
 <style>
   .card-div {
     width: 95%;
-    margin-left: 300px;
+    /* margin-left: 300px; */
   }
 
   .card-div:hover {
@@ -48,8 +48,10 @@
 
   .animal-card-link {
     display: grid;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: repeat(3, 200px);
-    grid-gap: 22%;
+    grid-gap: 25%;
     height: 10%;
     width: 95%;
     color: #432A0B;

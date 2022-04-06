@@ -81,23 +81,30 @@
   }
 
   .favs-labels-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 16%;
+    width: 100vw;
+    margin: 40px 0px 10px 400px;
+    /* margin-top: 20px;
+    margin-left: 300px; */
   }
 
   .user-favorite-animals-sec {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    width: 95vw;
-    height: 75vh;
-    margin: 15px 0px;
     background-color: #E9E7DD;
     border: 3px solid #C8C097;
     border-radius: 35px;
+    width: 95vw;
+    height: 100%;
+    margin: 15px 0px;
+  }
+
+  .grid {
+    display: grid;
   }
 
   .animal-card {
@@ -107,10 +114,6 @@
     height: 100px;
     width: 95%;
     border-bottom: 3px solid #C8C097;
-  }
-
-  .animal-details-p {
-    margin-left: 70px;
   }
 
   h2 {
