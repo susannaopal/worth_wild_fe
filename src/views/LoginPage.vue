@@ -63,7 +63,7 @@ export default {
     <p v-if="store.error">{{ store.error }}. No user found. Please try again.</p>
     <div class="button-div">
       <div class="login-submit-div">
-        <RouterLink to="/" class="login-btn">Back</RouterLink>
+        <button @click="$router.push('/')" class="login-btn">Back</button>
         <button @click.prevent="this.checkForm" class="login-btn" type="submit">Login</button>
       </div>
       <button class="login-btn" @click.prevent="this.showModal = !this.showModal">Register</button>
