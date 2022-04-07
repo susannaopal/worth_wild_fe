@@ -84,7 +84,15 @@ describe('Login Page User Flow', () => {
       .click()
   });
   
-  it('should be able to create a new user account', () => {
-
+  it('should not be able to create a new account if not all fields are filled in', () => {
+    cy.get('.button-div > :nth-child(2)')
+      .contains('Register')
+      .should('be.visible')
+      .click({ force: true })
+      .wait(300)
+      .get('[placeholder="First Name"]')
+      .type("Test")
+      .get('.modal-btn > [type="submit"]')
+      // .should("be.disabled")
   })
 });

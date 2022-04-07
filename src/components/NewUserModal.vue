@@ -49,16 +49,19 @@ import { store } from "../store.js"
               type="text" 
               placeholder="First Name" 
               :value="firstName"
+              required
               @input="e => firstName = e.target.value"
             />
             <input 
               type="text" 
               placeholder="Last Name" 
               :value="lastName"
+              required
               @input="e => lastName = e.target.value"
             />
             <input 
-              type="text" 
+              type="text"
+              required 
               placeholder="Email" 
               :value="email"
               @input="e => email = e.target.value"
@@ -66,10 +69,12 @@ import { store } from "../store.js"
             <input 
               type="text" 
               placeholder="Username" 
+              required
               :value="username"
               @input="e => username = e.target.value" 
             />
             <input 
+              required
               type="password" 
               placeholder="Password"
             />
