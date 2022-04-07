@@ -18,9 +18,15 @@ describe('Login Page User Flow', () => {
       .get(':nth-child(1) > input')
       .type('bpeterson')
       .should('be.visible')
-      .get(':nth-child(2) > label')
-      .contains('Password')
+      .get(':nth-child(2) > input')
+      .wait(200)
+      // .contains('Password')
+      .type('password')
       .should('be.visible')
+      .get("[type='submit']")
+      .click()
+      .url()
+      .should('eq', 'http://localhost:5050/main')
   });
 
   it('should see a back button', () => {
@@ -37,8 +43,8 @@ describe('Login Page User Flow', () => {
       .click()
   })
 
-     it('should be able to click a button to register', () => {
-      cy.get('.button-div > :nth-child(2)')
+  it('should be able to click a button to register', () => {
+    cy.get('.button-div > :nth-child(2)')
       .contains('Register')
       .should('be.visible')
       .click({ force: true })
