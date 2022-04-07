@@ -17,7 +17,6 @@ import { store } from "../store.js"
     },
     methods: {
       postNewUser() {
-        console.log("im working")
         const newUser = {
           username: this.username,
           email: this.email,

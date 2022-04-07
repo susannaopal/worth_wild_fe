@@ -90,9 +90,7 @@ describe('Login Page User Flow', () => {
       .should('be.visible')
       .click({ force: true })
       .wait(300)
-      .get('[placeholder="First Name"]')
-      .type("Test")
       .get('.modal-btn > [type="submit"]')
-      // .should("be.disabled")
+      .should("be.disabled")
   })
 });
