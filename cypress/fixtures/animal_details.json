@@ -1,0 +1,23 @@
+{
+  "id": 2,
+  "search_animal_id": null,
+  "common_name": "Wyoming Toad",
+  "scientific_name": "Anaxyrus baxteri",
+  "kingdom": "Animalia",
+  "phylum": "Craniata",
+  "taxclass": "Amphibia",
+  "taxorder": "Anura",
+  "family": "Bufonidae",
+  "genus": "Anaxyrus",
+  "biome": null,
+  "states": "[\"Wyoming\"]",
+  "habitats": null,
+  "habitat_comments": "Historically associated with floodplain ponds along the Big and Little Laramie Rivers; use of lakes may have been limited due to saline conditions; irrigation may have flushed out the lakes and made them more suitable for toads (George Baxter). Currently occurs in the vicinity of lakes and adjacent meadows. Uses rodent burrows for shelter. Eggs and larvae develop in shallow water.",
+  "threat_impact_comments": "Mortenson Lake site is infected with the amphibian chytrid fungus <i>(Batrachochytrium dendrobatidis) </i>(USFWS 2002)<i>. </i>This fungus has been implicated in declines and extinctions of amphibian species worldwide. Retrospective analysis shows that the fungus has been present at Mortenson Lake since at least 1989. In addition, chytridiomycosis is the most commonly seen disease in the captive population. Predation, pesticide use, irrigation practices, and lack of genetic diversity may also limit the abundance of Wyoming toads in the Laramie Basin (USFWS 2015). Mortenson Lake has become more saline (and less suitable for toads) as a result of drought-related increases in evaporation (USFWS 2002).",
+  "short_term_trend": "Wild population fluctuates and is tenuous with \"very little wild breeding to date\" (USFWS 2015).",
+  "pop_size": "250 - 2500 individuals",
+  "image": "https://tse4.mm.bing.net/th?id=OIP.ttrNZTem2XvUlui0to662wHaE8&pid=Api",
+  "created_at": "2022-04-06T23:40:33.342Z",
+  "updated_at": "2022-04-06T23:40:33.342Z",
+  "host_url": "https://detroitzoo.org/animals/zoo-animals/wyoming-toad/"
+}

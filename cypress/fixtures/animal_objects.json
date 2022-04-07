@@ -1,0 +1,43 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "type": "animal",
+            "attributes": {
+                "common_name": "Wyoming Toad",
+                "element_code": "AAABB01220",
+                "scientific_name": "Anaxyrus baxteri",
+                "vulnerability": {
+                    "gRank": "g1",
+                    "gRankReasons": "Critically Imperiled"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "type": "animal",
+            "attributes": {
+                "common_name": "Black Toad",
+                "element_code": "AAABB01070",
+                "scientific_name": "Anaxyrus exsul",
+                "vulnerability": {
+                    "gRank": "g1",
+                    "gRankReasons": "Critically Imperiled"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "type": "animal",
+            "attributes": {
+                "common_name": "Houston Toad",
+                "element_code": "AAABB01090",
+                "scientific_name": "Anaxyrus houstonensis",
+                "vulnerability": {
+                    "gRank": "g1",
+                    "gRankReasons": "Critically Imperiled"
+                }
+            }
+        }
+    ]
+  }

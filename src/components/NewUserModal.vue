@@ -17,7 +17,6 @@ import { store } from "../store.js"
     },
     methods: {
       postNewUser() {
-        console.log("im working")
         const newUser = {
           username: this.username,
           email: this.email,
@@ -49,16 +48,19 @@ import { store } from "../store.js"
               type="text" 
               placeholder="First Name" 
               :value="firstName"
+              required
               @input="e => firstName = e.target.value"
             />
             <input 
               type="text" 
               placeholder="Last Name" 
               :value="lastName"
+              required
               @input="e => lastName = e.target.value"
             />
             <input 
-              type="text" 
+              type="text"
+              required 
               placeholder="Email" 
               :value="email"
               @input="e => email = e.target.value"
@@ -66,10 +68,12 @@ import { store } from "../store.js"
             <input 
               type="text" 
               placeholder="Username" 
+              required
               :value="username"
               @input="e => username = e.target.value" 
             />
             <input 
+              required
               type="password" 
               placeholder="Password"
             />
@@ -90,7 +94,6 @@ import { store } from "../store.js"
 
 
 <style scoped>
-
 .login-btn:disabled {
   background-color: #bebfc2;
   color: #828385;
@@ -105,7 +108,6 @@ import { store } from "../store.js"
   border-radius: 30px;
   display: flex;
 }
-
 .modal-body {
   display: flex;
   align-items: center;  
@@ -114,21 +116,17 @@ import { store } from "../store.js"
   width: 100%;
   margin: 20px 0;
 }
-
 .modal-enter-from {
   opacity: 0;
 }
-
 .modal-leave-to {
   opacity: 0;
 }
-
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -139,7 +137,6 @@ import { store } from "../store.js"
   display: table;
   transition: opacity 0.3s ease;
 }
-
 .modal-btn {
   display: flex;
   justify-content: space-evenly;

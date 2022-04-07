@@ -1,0 +1,11 @@
+{
+    "data": {
+        "type": "animal_of_the_day",
+        "attributes": {
+            "common_name": "American Dry Rock Moss",
+            "scientific_name": "Grimmia americana",
+            "element_code": "NBMUS32040",
+            "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.yZUHDD3GT7G0fi17r00bIAHaFj&pid=Api"
+        }
+    }
+}

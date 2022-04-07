@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <script>
   import router from "../router/index";
   import { store } from '../store.js';
@@ -37,7 +34,6 @@
 <style>
   .card-div {
     width: 95%;
-    /* margin-left: 300px; */
   }
 
   .card-div:hover {

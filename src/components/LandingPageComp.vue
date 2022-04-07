@@ -66,8 +66,6 @@ a {
   background-color: #e9e7dd;
   color: #432a0b;
   border: 3px solid #c8c097;
-  /* background-color: #556d1d;
-  color: #e9e7dd; */
   box-shadow: 0px 5px #334111;
   border-radius: 50px;
   height: 5vh;
@@ -84,7 +82,5 @@ a {
   transform: scale(1.1);
   background-color: #556d1d;
   color: #e9e7dd;
-  /* background-color: #e9e7dd;
-  color: #556d1d; */
 }
 </style>
