@@ -90,7 +90,6 @@ import { store } from "../store.js"
 
 
 <style scoped>
-
 .login-btn:disabled {
   background-color: #bebfc2;
   color: #828385;
@@ -105,7 +104,6 @@ import { store } from "../store.js"
   border-radius: 30px;
   display: flex;
 }
-
 .modal-body {
   display: flex;
   align-items: center;  
@@ -114,21 +112,17 @@ import { store } from "../store.js"
   width: 100%;
   margin: 20px 0;
 }
-
 .modal-enter-from {
   opacity: 0;
 }
-
 .modal-leave-to {
   opacity: 0;
 }
-
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -139,7 +133,6 @@ import { store } from "../store.js"
   display: table;
   transition: opacity 0.3s ease;
 }
-
 .modal-btn {
   display: flex;
   justify-content: space-evenly;
