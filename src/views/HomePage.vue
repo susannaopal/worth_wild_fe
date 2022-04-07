@@ -75,7 +75,7 @@ export default {
     <NavBar />
     <section class="feature-info">
       <div @click="getAnimalOfDay(store.animalOfDay.common_name, store.animalOfDay.element_code)" class="feature-info-div">
-        <h3>Species of the Day</h3>
+        <h3>Animal of the Day</h3>
         <img 
           :src="store.animalOfDay.imageUrl" alt="animal of the day" 
           class="animal-of-day-img"

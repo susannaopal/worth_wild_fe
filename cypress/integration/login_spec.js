@@ -43,7 +43,5 @@ describe('Login Page User Flow', () => {
       .should('be.visible')
       .click({ force: true })
       .wait(300)
-      // .invoke('showModal')
-      // // .get('[name="modal"]')
     });
 });

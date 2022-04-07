@@ -4,7 +4,6 @@ describe('Search Page User Flow', () => {
       .visit('http://localhost:5050/main');
     cy.intercept('GET', 'https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day', {fixture: "animal_of_day.json"})
       .visit('http://localhost:5050/main');
-    
   });
 
    it('should see a tagline', () => {
