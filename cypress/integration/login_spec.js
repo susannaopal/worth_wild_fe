@@ -20,7 +20,6 @@ describe('Login Page User Flow', () => {
       .should('be.visible')
       .get(':nth-child(2) > input')
       .wait(200)
-      // .contains('Password')
       .type('password')
       .should('be.visible')
       .get("[type='submit']")
@@ -28,6 +27,16 @@ describe('Login Page User Flow', () => {
       .url()
       .should('eq', 'http://localhost:5050/main')
   });
+
+  it('should display a message if not all fields are filled in', () => {
+    cy.get('form')
+      .get(':nth-child(1) > input')
+      .type('bpeterson')
+      .get("[type='submit']")
+      .click()
+      .get('p')
+      .contains('Please fill out both fields in order to login!')
+  })
 
   it('should see a back button', () => {
     cy.get('.login-submit-div > :nth-child(1)')
