@@ -10,9 +10,6 @@
         store
       }
     },
-    created() {
-      console.log(store.favorites)
-    },
     methods: {
       capitalizeName(string) {
         const splitString = string.split(' ')

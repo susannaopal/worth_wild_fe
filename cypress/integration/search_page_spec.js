@@ -1,12 +1,11 @@
 describe('Search Page User Flow', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://secure-island-06435.herokuapp.com/api/v1/animals', {fixture: "animal_objects.json"})
-      .visit('http://localhost:5050/main');
     cy.intercept('GET', 'https://secure-island-06435.herokuapp.com/api/v1/animal_of_the_day', {fixture: "animal_of_day.json"})
       .visit('http://localhost:5050/main');
   });
 
-   it('should see a tagline', () => {
+  it('should see a tagline', () => {
     cy.get('.logo-tagline-div')
       .contains('Are they worth it to you?')
       .should('be.visible');
@@ -33,7 +32,7 @@ describe('Search Page User Flow', () => {
     });
 
   it('should see the featured organization', () => {
-     cy.get('body')
+    cy.get('body')
       .get('.feature-info-div')
       .get('h3')
       .contains('Featured Organization')
@@ -48,14 +47,14 @@ describe('Search Page User Flow', () => {
       .should('be.visible')
   });
 
-   it('should see a title for the Scientific Name', () => {
+  it('should see a title for the Scientific Name', () => {
     cy.get('body')
       .get('.labels-container')
       .contains('Scientific Name')
       .should('be.visible')
   });
 
-   it('should see a title for the Conservation Name', () => {
+  it('should see a title for the Conservation Name', () => {
     cy.get('body')
       .get('.labels-container')
       .contains('Conservation Status')

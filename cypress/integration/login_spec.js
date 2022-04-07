@@ -50,22 +50,24 @@ describe('Login Page User Flow', () => {
       .contains('Login')
       .should('be.visible')
       .click()
-  })
+  });
 
   it('should be able to click a button to register and create a new account', () => {
     const newUser = {
-          username: 'testUser',
-          email: 'test@test.com',
-          first_name: 'Test',
-          last_name: 'Test'
-        }
+      username: 'testUser',
+      email: 'test@test.com',
+      first_name: 'Test',
+      last_name: 'Test'
+    }
+    
     cy.intercept('https://secure-island-06435.herokuapp.com/api/v1/users', {
-          method: 'POST',
-          body: JSON.stringify(newUser),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
+      method: 'POST',
+      body: JSON.stringify(newUser),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    
     cy.get('.button-div > :nth-child(2)')
       .contains('Register')
       .should('be.visible')
