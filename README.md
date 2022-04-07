@@ -23,21 +23,27 @@
   - VS Code
 	- Custom API 
 
-
 ## Illustrations
 
 Accessing App:
+
 ![landing-page](https://media.giphy.com/media/pMj2WADGHvnu1H6O4d/giphy.gif)
 
 Logging into App:
+
 ![log-in](https://media.giphy.com/media/GLXaW0L0QuEL1AOm1H/giphy.gif)
 
-Animal Index:
-![index-page](https://media.giphy.com/media/GLXaW0L0QuEL1AOm1H/giphy.gif)
+Animal Search and Favoriting:
 
+![index-page](https://media.giphy.com/media/27tmAtotSbIcxlWHpp/giphy.gif)
 
+Accessing Features of the Day:
 
+![features](https://media.giphy.com/media/LWg9smMfUKkzoWbo4w/giphy.gif)
 
+Login Error Handling: 
+
+![error](https://media.giphy.com/media/gKJooAUrqSb8BnqAq6/giphy.gif)
 
 
 ## Install + Setup
