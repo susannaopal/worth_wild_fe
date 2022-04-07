@@ -26,7 +26,8 @@
 
 ## Illustrations
 
-Use https://gifcap.dev/ to make GIFs
+Accessing App:
+![landing-page](https://media.giphy.com/media/pMj2WADGHvnu1H6O4d/giphy.gif)
 
 
 ## Install + Setup
