@@ -1,49 +1,75 @@
-# worth_wild_ui
+# Mod 4 Worth Wild 
+ Deployed [here](https://worth-wild.herokuapp.com/) on Heroku.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Table of Contents
+  - [Abstract](#abstract)
+  - [Technologies](#technologies)
+  - [Illustrations](#illustrations)
+  - [Install + Setup](#set-up)
+  - [Contributors](#contributors)
+	- [Wins](#wins)
+	- [Challenges + Improvements](#challenges-+-Improvements)
+  - [Project Specs](#project-specs)
 
-## Recommended IDE Setup
+## Abstract
+	The goal of this project was to build an application with a team of back-end developers and implement new concepts, patterns, and libraries that have not been explicitly taught while at Turing.
+  The app allows a user to explore and discover animal and plant species that are classified as critically imperiled. If a user chooses to register an account, they will be able to login and favorite the species they find the most interesting in order to keep track of their status. Otherwise, anyone can explore the app by choosing the guest option.  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
-## Customize configuration
+## Technologies
+  - Vue.js
+  - Cypress
+  - Heroku
+  - VS Code
+	- Custom API 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Illustrations
 
-## Project Setup
+Accessing App:
 
-```sh
-npm install
-```
+![landing-page](https://media.giphy.com/media/pMj2WADGHvnu1H6O4d/giphy.gif)
 
-### Compile and Hot-Reload for Development
+Logging into App:
 
-```sh
-npm run dev
-```
+![log-in](https://media.giphy.com/media/GLXaW0L0QuEL1AOm1H/giphy.gif)
 
-### Compile and Minify for Production
+Animal Search and Favoriting:
 
-```sh
-npm run build
-```
+![index-page](https://media.giphy.com/media/27tmAtotSbIcxlWHpp/giphy.gif)
 
-### Run Unit Tests with [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/introduction)
+Accessing Features of the Day:
 
-```sh
-npm run test:unit # or `npm run test:unit:ci` for headless testing
-```
+![features](https://media.giphy.com/media/LWg9smMfUKkzoWbo4w/giphy.gif)
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Login Error Handling: 
 
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
+![error](https://media.giphy.com/media/gKJooAUrqSb8BnqAq6/giphy.gif)
 
-### Lint with [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
-```
-# worth_wild_fe
+## Install + Setup
+	- Clone this [repo](https://github.com/Worth-Wild/worth_wild_fe) to your machine.
+  - `cd` into the directory `worth_wild_fe`
+  - Run `npm install`
+  - `npm run dev`
+  - Copy local host into browser 
+
+
+
+## Contributors
+  - [Brian Peterson](https://github.com/bpeterson2579)
+  - [Jessica Organ](https://github.com/Jorgan612)
+  - [Kai Kuller](https://github.com/kavakai)
+  - [Susanna Carey](https://github.com/susannaopal)
+
+## Wins
+	- Fantastic communication across the team. 
+	- We were able to create a functioning application in a new front-end framework. 
+
+## Challenges + Improvements
+	- Creating the project in Vue.js as it was a new framework for us. 
+	- Implementing global state management and the continuous integration tool CircleCi. 
+	- Future Extensions: Donation feature, or additional pages with more information on conservation organizations across North America. 
+
+
+## Project Specs
+  - The project spec & rubric can be found [here](https://mod4.turing.edu/projects/capstone/)
