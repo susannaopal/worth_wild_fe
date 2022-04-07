@@ -15,8 +15,7 @@ describe('Login Page User Flow', () => {
 
   it('should be able to see a username and password input on the form', () => {
     cy.get('form')
-      .get(':nth-child(1) > label')
-      .contains('Username')
+      .get(':nth-child(1) > input')
       .type('bpeterson')
       .should('be.visible')
       .get(':nth-child(2) > label')
@@ -42,6 +41,8 @@ describe('Login Page User Flow', () => {
       cy.get('.button-div > :nth-child(2)')
       .contains('Register')
       .should('be.visible')
-      .click()
+      .click({ force: true})
+      // .invoke('showModal')
+      // // .get('[name="modal"]')
     });
 });

@@ -21,21 +21,6 @@
         })
         return capitalizedWords.join(' ')
       },
-
-      // renderFavorites() {
-      //   return store.favorites.map(animal => {
-      //     console.log(animal)
-      //     return (
-      //       <AnimalCard 
-      //         commonName = {animal.common_name}
-      //         scientificName= {animal.scientific_name}
-      //         gRankReasons= {animal.pop_size}
-      //         id= {animal.element_code}
-      //         key= {animal.element_code}
-      //       />
-      //     )
-      //   })
-      // }
     }
   }
 </script>
@@ -86,8 +71,6 @@
     grid-gap: 16%;
     width: 100vw;
     margin: 40px 0px 10px 400px;
-    /* margin-top: 20px;
-    margin-left: 300px; */
   }
 
   .user-favorite-animals-sec {
