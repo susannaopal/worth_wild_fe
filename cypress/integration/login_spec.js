@@ -41,7 +41,8 @@ describe('Login Page User Flow', () => {
       cy.get('.button-div > :nth-child(2)')
       .contains('Register')
       .should('be.visible')
-      .click({ force: true})
+      .click({ force: true })
+      .wait(300)
       // .invoke('showModal')
       // // .get('[name="modal"]')
     });
