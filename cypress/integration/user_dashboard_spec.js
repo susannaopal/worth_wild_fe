@@ -5,11 +5,8 @@ describe('User Dashboard User Flow', () => {
       cy.get('.card-div')
       .contains('Wyoming Toad')
       .click()
-  });
-
-  it('should be able to visit the url', () => {
-    cy.url()
-      .should('eq', 'http://localhost:5050/details');
+      .url()
+      .should('eq', 'http://localhost:5050/details')
   });
   
   it('should have a nav bar', () => {
