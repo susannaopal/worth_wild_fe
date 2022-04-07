@@ -29,6 +29,16 @@
 Accessing App:
 ![landing-page](https://media.giphy.com/media/pMj2WADGHvnu1H6O4d/giphy.gif)
 
+Logging into App:
+![log-in](https://media.giphy.com/media/GLXaW0L0QuEL1AOm1H/giphy.gif)
+
+Animal Index:
+![index-page](https://media.giphy.com/media/GLXaW0L0QuEL1AOm1H/giphy.gif)
+
+
+
+
+
 
 ## Install + Setup
 	- Clone this [repo](https://github.com/Worth-Wild/worth_wild_fe) to your machine.
